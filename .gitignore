@@ -1,0 +1,3 @@
+!# Ignore the data folder. Obtain it from vQA website
+data/*
+
