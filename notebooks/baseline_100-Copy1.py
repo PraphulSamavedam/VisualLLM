@@ -9,7 +9,6 @@ from huggingface_hub import login
 validation_folder = "../data/validation"
 annotations_file_path = f"{validation_folder}/annotations.json"
 questions_file_path = f"{validation_folder}/questions.json"
-token = "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"
 login(token=token) ## This is bound to fail, add your token from chat and run
 
 print("Obtaining the images to annotations")

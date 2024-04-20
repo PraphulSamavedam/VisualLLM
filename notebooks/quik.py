@@ -6,7 +6,6 @@ from PIL import Image
 
 # %%
 from huggingface_hub import login
-token = "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"
 
 login(token=token) ## This is bound to fail, add your token from chat and run
 

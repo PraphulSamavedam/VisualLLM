@@ -138,7 +138,6 @@ for caption, image_id, image_file in zip(captions, image_ids, image_files):
 
 import os
 from huggingface_hub import login
-token = "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"
 
 login(token=token) ## This is bound to fail, add your token from chat and run
 
