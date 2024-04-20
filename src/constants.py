@@ -11,6 +11,7 @@ test_images_folder = f"{test_folder}/images"
 
 mapped_qa_file_path = f"{data_folder}/mapped_question_answers.csv"
 captions_file_path = f"{data_folder}/10k_blip_captions.csv"
+detections_file_path = f"{data_folder}/10k_yolo_detections.csv"
 
 annotations_file_path = f"{validation_folder}/annotations.json"
 questions_file_path = f"{validation_folder}/questions.json"
