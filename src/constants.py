@@ -1,6 +1,7 @@
 ### This file has constants used in the program
 data_folder = "../data"
 results_folder = "../results"
+inferences_folder = "../inferences"
 validation_folder = f"{data_folder}/validation"
 train_folder = f"{data_folder}/train"
 test_folder = f"{data_folder}/test"

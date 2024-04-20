@@ -1,11 +1,11 @@
 import pandas as pd
 import torch
 from PIL import Image
-from constants import mapped_qa_file_path, captions_file_path, detections_file_path
+from constants import sampled_qa_file_path, captions_file_path, detections_file_path
 
 # Obtain the captions and questions, answers for the samples considered
 captions_data = pd.read_csv(captions_file_path)
-qa_data = pd.read_csv(mapped_qa_file_path)
+qa_data = pd.read_csv(sampled_qa_file_path)
 
 # Created the concatenated data for analysis
 qa_data.drop(columns=["Image file"], inplace=True)

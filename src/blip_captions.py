@@ -1,11 +1,11 @@
 import torch 
 from transformers import pipeline # Use a pipeline as a high-level helper
-from constants import mapped_qa_file_path, captions_file_path
+from constants import sampled_qa_file_path, captions_file_path
 import pandas as pd
 
 # Obtaining the image files list
 print("Obtaining the image files list")
-df = pd.read_csv(mapped_qa_file_path)
+df = pd.read_csv(sampled_qa_file_path)
 
 image_files = df["Image file"].to_list()
 
