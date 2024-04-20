@@ -10,7 +10,7 @@ from transformers import pipeline  # Use a pipeline as a high-level helper
 from huggingface_hub import login
 from tqdm import tqdm
 
-from constants import sampled_qa_file_path, captions_file_path, results_folder
+from constants import sampled_qa_file_path, captions_file_path, inferences_folder
 
 
 # File Names:
@@ -55,9 +55,9 @@ answers = [{
     'Generated Answer': llamaPipe(instance['Prompt'], max_new_tokens=20)[0]['generated_text']
 } for _, instance in tqdm(df.iterrows())]
 
-pd.DataFrame(answers).to_csv(f"{results_folder}/{default_answers_file}", index=False)
+pd.DataFrame(answers).to_csv(f"{inferences_folder}/{default_answers_file}", index=False)
 
-print(f"Data has been written to {results_folder}/{default_answers_file}")
+print(f"Data has been written to {inferences_folder}/{default_answers_file}")
 
 
 ### Zero Shot Performance with configuration limit to 3 tokens only
@@ -74,8 +74,8 @@ generation_cfg_answers = [{
 } for _, instance in tqdm(df.iterrows())]
 
 # Store the results
-pd.DataFrame(generation_cfg_answers).to_csv(f'{results_folder}/{gen_cfg_restricted_file}', index=False)
-print(f"Data has been written to f{results_folder}/{gen_cfg_restricted_file}")
+pd.DataFrame(generation_cfg_answers).to_csv(f'{inferences_folder}/{gen_cfg_restricted_file}', index=False)
+print(f"Data has been written to f{inferences_folder}/{gen_cfg_restricted_file}")
 
 
 ### Restriction by configuration to restrict to 3 tokens with restriction to single word in prompt
@@ -98,8 +98,8 @@ generation_cfg_prompt_restriction_answers = [{
 } for _, instance in tqdm(df.iterrows())]
 
 # Store the results
-pd.DataFrame(generation_cfg_prompt_restriction_answers).to_csv(f"{results_folder}/{gen_cfg_and_prompt_restricted_file}", index=False)
-print(f"Data has been written to {results_folder}/{gen_cfg_and_prompt_restricted_file}")
+pd.DataFrame(generation_cfg_prompt_restriction_answers).to_csv(f"{inferences_folder}/{gen_cfg_and_prompt_restricted_file}", index=False)
+print(f"Data has been written to {inferences_folder}/{gen_cfg_and_prompt_restricted_file}")
 
 
 ### Configuration to generate only 3 tokens at max and enhanced prompt
@@ -123,5 +123,5 @@ prompt_with_generation_cfg_answers = [{
 } for _, instance in tqdm(df.iterrows())]
 
 # Store the results
-pd.DataFrame(prompt_with_generation_cfg_answers).to_csv(f"{results_folder}/{gen_cfg_with_enhanced_prompt_file}", index=False)
-print(f"Data has been written to {results_folder}/{gen_cfg_with_enhanced_prompt_file}")
+pd.DataFrame(prompt_with_generation_cfg_answers).to_csv(f"{inferences_folder}/{gen_cfg_with_enhanced_prompt_file}", index=False)
+print(f"Data has been written to {inferences_folder}/{gen_cfg_with_enhanced_prompt_file}")
