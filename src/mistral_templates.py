@@ -30,17 +30,16 @@ templates = ["Based on the image caption(provided by BLIP model) as '{caption}' 
              "Challenge: With the caption '{caption}' and objects detected as '{detections}', determine the single-word answer to the question: '{question}'.\nAnswer: ",
              "Answer in a single word for the question: {question} using image caption: {caption} and object detections: {detections}.\nAnswer: "]
 
-# Sets the Hugging Face token for running LLama
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-unquantMistralPipe = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.2", return_full_text=False,
-                       device = device)
-quantMistralPipe = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.2", return_full_text=False,
-                       device = device, torch_dtype=torch.bfloat16)
-
 # We are running for top 1000 instances only
 df = df[:1000]
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+### Unquantized Mistral run
+mistralPipe = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.2",
+                       return_full_text=False,
+                       device = device)
 for indx, template in enumerate(templates):
     if indx == 0:
         continue
@@ -50,9 +49,8 @@ for indx, template in enumerate(templates):
     df["Prompt"] = df.apply(lambda row: row['Prompt'].replace('{question}', row['Question']).replace('{detections}', row['Generated Detections']).replace('{caption}', row['Generated Caption']), axis=1)
     dataset = Dataset.from_pandas(df)
 
-    ### Unquantized Mistral run
     start_time = time.time()
-    output = unquantMistralPipe(dataset["Prompt"], max_new_tokens=1)
+    output = mistralPipe(dataset["Prompt"], max_new_tokens=1)
     df.loc[:, "Model Output"] = output
     file_name = f"{inferences_folder}/{unquantized_folder}/Template_{indx}_1k_unquantized.csv"
     df.to_csv(file_name, index=False)
@@ -63,9 +61,23 @@ for indx, template in enumerate(templates):
     elapsed_time = end_time - start_time
     print(f"Elapsed time: {elapsed_time:.6f} seconds")
 
-    ### Quantized Mistral run
+
+### Quantized Mistral run
+mistralPipe = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.2",
+                       return_full_text=False,
+                       device = device, torch_dtype=torch.bfloat16)
+
+for indx, template in enumerate(templates):
+    if indx == 0:
+        continue
+    print(f"Running for {indx+1} template")
+
+    df["Prompt"] = template
+    df["Prompt"] = df.apply(lambda row: row['Prompt'].replace('{question}', row['Question']).replace('{detections}', row['Generated Detections']).replace('{caption}', row['Generated Caption']), axis=1)
+    dataset = Dataset.from_pandas(df)
+
     start_time = time.time()
-    output = quantMistralPipe(dataset["Prompt"], max_new_tokens=1)
+    output = mistralPipe(dataset["Prompt"], max_new_tokens=1)
     df.loc[:, "Model Output"] = output
     file_name = f"{inferences_folder}/{quantized_folder}/Template_{indx}_1k_quantized.csv"
     df.to_csv(file_name, index=False)
