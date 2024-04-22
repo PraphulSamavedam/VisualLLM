@@ -1,0 +1,27 @@
+{
+    "other": {
+        "accuracies": {
+            "exact_match_accuracy": 0.014893617021276596,
+            "semantic_similarity_accuracy": 0.014893617021276596
+        },
+        "count": 470
+    },
+    "yes/no": {
+        "accuracies": {
+            "exact_match_accuracy": 0.005076142131979695,
+            "semantic_similarity_accuracy": 0.005076142131979695
+        },
+        "count": 394
+    },
+    "number": {
+        "accuracies": {
+            "exact_match_accuracy": 0.5514705882352942,
+            "semantic_similarity_accuracy": 0.6838235294117647
+        },
+        "count": 136
+    },
+    "overall": {
+        "weighted_exact_match_accuracy": 0.084,
+        "weighted_semantic_accuracy": 0.102
+    }
+}

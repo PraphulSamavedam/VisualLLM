@@ -21,6 +21,7 @@ df = pd.read_csv(detections_file_path)
 # Sets up Mistral from Hugging Face
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 mistralPipe = pipeline("text-generation", model="mistralai/Mistral-7B-Instruct-v0.2",
+		       return_full_text=False,
                        device = device, torch_dtype=torch.bfloat16)
 
 # results = df.to_dict('records')
