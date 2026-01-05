@@ -1,7 +1,10 @@
-# VisualSearch - Visual LLM
-This repository has 2 aspects. 
-- Exploration of performance of different pipelines consisting of different LLM on VQA without explicit fune tuning.
-- Based on the best performing pipeline, improve the search system for better search/recommendation system.
+# VisualLLM - Visual Question Answering
+
+This repository explores **Visual Question Answering (VQA)** using Large Language Models without explicit fine-tuning. The project has 2 main aspects:
+- Exploration of performance of different pipelines consisting of different LLMs on VQA without explicit fine-tuning
+- Based on the best performing pipeline, improve the search system for better search/recommendation system
+
+📚 **[View Website](https://praphulsamavedam.github.io/VisualLLM/)**
 ## LLM based visual question answering.
 ### Visual Question Answering (VQA)
 Visual Question Answering (VQA) is the task of answering the posed
