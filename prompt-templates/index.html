@@ -245,18 +245,74 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../pipelines/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../pipelines/" class="md-tabs__link">
+        
   
+  
+    
   
   Pipelines
 
-        </a>
-      </li>
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blip-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
     
+  
+  BLIP + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  YOLO + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blip-yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BLIP + YOLO + LLM
+
+      </a>
+    </li>
   
 
       
@@ -313,7 +369,7 @@
   
     
   
-  Getting Started
+  Development Guide
 
       </a>
     </li>
@@ -398,60 +454,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pipelines
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Pipelines
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../pipelines/" class="md-nav__link">
         
@@ -460,7 +462,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Pipelines
   
 
     
@@ -472,10 +474,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -500,10 +501,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -528,10 +528,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -553,14 +552,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -590,10 +581,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -611,8 +602,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -853,6 +844,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Complete Results Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blip-yolo-llama-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLIP + YOLO + Llama-2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blip-yolo-mistral-7b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLIP + YOLO + Mistral-7B
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Model Comparison
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1027,6 +1057,45 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Experiments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1112,7 +1181,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Development Guide
   
 
     
@@ -1288,6 +1357,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Complete Results Table">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blip-yolo-llama-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLIP + YOLO + Llama-2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blip-yolo-mistral-7b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BLIP + YOLO + Mistral-7B
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cross-model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Model Comparison
+      
+    </span>
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1459,6 +1567,45 @@
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Experiments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1806,132 +1953,151 @@
 <hr />
 <h2 id="performance-comparison">Performance Comparison<a class="headerlink" href="#performance-comparison" title="Permanent link">&para;</a></h2>
 <h3 id="complete-results-table">Complete Results Table<a class="headerlink" href="#complete-results-table" title="Permanent link">&para;</a></h3>
-<p><strong>BLIP + YOLO + Llama:</strong></p>
+<h4 id="blip-yolo-llama-2">BLIP + YOLO + Llama-2<a class="headerlink" href="#blip-yolo-llama-2" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Template</th>
-<th style="text-align: center;">Quantized Exact Match</th>
-<th style="text-align: center;">Unquantized Exact Match</th>
-<th style="text-align: center;">Quantized Semantic</th>
-<th style="text-align: center;">Unquantized Semantic</th>
+<th style="text-align: right;">Exact Match</th>
+<th style="text-align: right;">Semantic Match</th>
+<th>Performance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0.43</td>
-<td style="text-align: center;">0.43</td>
-<td style="text-align: center;">0.57</td>
-<td style="text-align: center;">0.58</td>
-</tr>
-<tr>
-<td style="text-align: center;">2</td>
-<td style="text-align: center;">0.30</td>
-<td style="text-align: center;">0.30</td>
-<td style="text-align: center;">0.41</td>
-<td style="text-align: center;">0.39</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.26</td>
-<td style="text-align: center;">0.24</td>
-<td style="text-align: center;">0.35</td>
-<td style="text-align: center;">0.35</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.39</td>
-<td style="text-align: center;">0.39</td>
-<td style="text-align: center;">0.52</td>
-<td style="text-align: center;">0.52</td>
-</tr>
-<tr>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0.33</td>
-<td style="text-align: center;">0.33</td>
-<td style="text-align: center;">0.43</td>
-<td style="text-align: center;">0.43</td>
+<td style="text-align: center;"><strong>1</strong> ⭐</td>
+<td style="text-align: right;"><strong>43.0%</strong></td>
+<td style="text-align: right;"><strong>58.0%</strong></td>
+<td>🏆 Best - Context-first</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">0.41</td>
-<td style="text-align: center;">0.41</td>
-<td style="text-align: center;">0.52</td>
-<td style="text-align: center;">0.53</td>
+<td style="text-align: right;">41.0%</td>
+<td style="text-align: right;">53.0%</td>
+<td>✅ Second-best</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">39.0%</td>
+<td style="text-align: right;">52.0%</td>
+<td>✅ Solid baseline</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">33.0%</td>
+<td style="text-align: right;">43.0%</td>
+<td>⚠️ Below average</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">30.0%</td>
+<td style="text-align: right;">39.0%</td>
+<td>⚠️ Poor</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">24.0%</td>
+<td style="text-align: right;">35.0%</td>
+<td>❌ Avoid</td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
-<td style="text-align: center;">0.11</td>
-<td style="text-align: center;">0.11</td>
-<td style="text-align: center;">0.17</td>
-<td style="text-align: center;">0.18</td>
+<td style="text-align: right;">11.0%</td>
+<td style="text-align: right;">18.0%</td>
+<td>❌ Catastrophic</td>
 </tr>
 </tbody>
 </table>
-<p><strong>BLIP + YOLO + Mistral:</strong></p>
+<p><strong>Best Configuration:</strong> Template 1 with 58% semantic accuracy</p>
+<hr />
+<h4 id="blip-yolo-mistral-7b">BLIP + YOLO + Mistral-7B<a class="headerlink" href="#blip-yolo-mistral-7b" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Template</th>
-<th style="text-align: center;">Quantized Exact Match</th>
-<th style="text-align: center;">Unquantized Exact Match</th>
-<th style="text-align: center;">Quantized Semantic</th>
-<th style="text-align: center;">Unquantized Semantic</th>
+<th style="text-align: right;">Exact Match</th>
+<th style="text-align: right;">Semantic Match</th>
+<th>Performance</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">0.476</td>
-<td style="text-align: center;">0.476</td>
-<td style="text-align: center;">0.491</td>
-<td style="text-align: center;">0.491</td>
+<td style="text-align: center;"><strong>7</strong> ⭐</td>
+<td style="text-align: right;"><strong>51.9%</strong></td>
+<td style="text-align: right;"><strong>55.1%</strong></td>
+<td>🏆 Best - Question-first</td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">0.483</td>
-<td style="text-align: center;">0.484</td>
-<td style="text-align: center;">0.501</td>
-<td style="text-align: center;">0.102</td>
-</tr>
-<tr>
-<td style="text-align: center;">3</td>
-<td style="text-align: center;">0.478</td>
-<td style="text-align: center;">0.479</td>
-<td style="text-align: center;">0.492</td>
-<td style="text-align: center;">0.493</td>
-</tr>
-<tr>
-<td style="text-align: center;">4</td>
-<td style="text-align: center;">0.472</td>
-<td style="text-align: center;">0.473</td>
-<td style="text-align: center;">0.488</td>
-<td style="text-align: center;">0.488</td>
+<td style="text-align: right;">48.4%</td>
+<td style="text-align: right;">50.1%</td>
+<td>✅ Second-best</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">0.484</td>
-<td style="text-align: center;">0.486</td>
-<td style="text-align: center;">0.498</td>
-<td style="text-align: center;">0.501</td>
+<td style="text-align: right;">48.6%</td>
+<td style="text-align: right;">50.1%</td>
+<td>✅ Consistent</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">47.6%</td>
+<td style="text-align: right;">49.1%</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">47.9%</td>
+<td style="text-align: right;">49.3%</td>
+<td>✅ Good</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">47.3%</td>
+<td style="text-align: right;">48.8%</td>
+<td>⚠️ Lower</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
-<td style="text-align: center;">0.472</td>
-<td style="text-align: center;">0.473</td>
-<td style="text-align: center;">0.488</td>
-<td style="text-align: center;">0.489</td>
-</tr>
-<tr>
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">0.516</td>
-<td style="text-align: center;">0.519</td>
-<td style="text-align: center;">0.549</td>
-<td style="text-align: center;">0.551</td>
+<td style="text-align: right;">47.3%</td>
+<td style="text-align: right;">48.9%</td>
+<td>⚠️ Lower</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Best Configuration:</strong> Template 7 with 55.1% semantic accuracy</p>
+<hr />
+<h3 id="cross-model-comparison">Cross-Model Comparison<a class="headerlink" href="#cross-model-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: center;">Best Template</th>
+<th style="text-align: right;">Semantic Accuracy</th>
+<th style="text-align: center;">Worst Template</th>
+<th style="text-align: right;">Gap</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Llama-2</strong></td>
+<td style="text-align: center;">Template 1</td>
+<td style="text-align: right;"><strong>58.0%</strong> ⭐</td>
+<td style="text-align: center;">Template 7</td>
+<td style="text-align: right;">40.0%</td>
+</tr>
+<tr>
+<td><strong>Mistral</strong></td>
+<td style="text-align: center;">Template 7</td>
+<td style="text-align: right;"><strong>55.1%</strong></td>
+<td style="text-align: center;">Template 6</td>
+<td style="text-align: right;">6.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Insight:</strong> Template 7 shows <strong>86% performance gap</strong> between models:
+- Mistral: 55.1% (best) 🏆
+- Llama-2: 18.0% (worst) ❌</p>
 <h3 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h3>
 <ol>
 <li><strong>Model-Specific Preferences:</strong></li>
@@ -2145,6 +2311,20 @@ None of the templates show catastrophic failure for Mistral. All perform reasona
 - <strong>Use Template 7 for Mistral</strong> (0.551 semantic accuracy)
 - <strong>Always test templates</strong> before deployment
 - <strong>Quantization is safe</strong> (minimal impact on template performance)</p>
+<hr />
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h2>
+<p><strong>← <a href="../">Back to Home</a></strong></p>
+<h3 id="related-experiments">Related Experiments<a class="headerlink" href="#related-experiments" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../generation-config/">Generation Configuration</a> - Token limits and configuration</li>
+<li><a href="../in-context-learning/">In-Context Learning</a> - Few-shot learning experiments</li>
+<li><a href="../results/">Results &amp; Analysis</a> - Comprehensive performance analysis</li>
+</ul>
+<h3 id="pipeline-pages">Pipeline Pages<a class="headerlink" href="#pipeline-pages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../pipelines/">Pipeline Overview</a> - Compare all three architectures</li>
+<li><a href="../blip-llm-pipeline/">BLIP + LLM</a> | <a href="../yolo-llm-pipeline/">YOLO + LLM</a> | <a href="../blip-yolo-llm-pipeline/">BLIP + YOLO + LLM</a></li>
+</ul>
 
 
 

@@ -244,21 +244,77 @@
   
   
   
-    
+  
+    <li class="md-tabs__item">
+      <a href="../pipelines/" class="md-tabs__link">
+        
   
   
     
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../pipelines/" class="md-tabs__link">
-          
-  
   
   Pipelines
 
-        </a>
-      </li>
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
     
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BLIP + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  YOLO + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blip-yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BLIP + YOLO + LLM
+
+      </a>
+    </li>
   
 
       
@@ -313,7 +369,7 @@
   
     
   
-  Getting Started
+  Development Guide
 
       </a>
     </li>
@@ -396,63 +452,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pipelines
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Pipelines
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -463,7 +462,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Pipelines
   
 
     
@@ -475,10 +474,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
     
@@ -616,22 +614,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#implementation-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Implementation Overview
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Implementation Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blip-llama-implementation" class="md-nav__link">
+  <a href="#blip-llama-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + Llama Implementation
+        BLIP + Llama Configuration
       
     </span>
   </a>
@@ -639,10 +637,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blip-mistral-implementation" class="md-nav__link">
+  <a href="#blip-mistral-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + Mistral Implementation
+        BLIP + Mistral Configuration
       
     </span>
   </a>
@@ -870,6 +868,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -877,10 +903,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -905,10 +930,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -930,14 +954,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -964,10 +980,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -985,8 +1001,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1128,7 +1144,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Development Guide
   
 
     
@@ -1240,22 +1256,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#implementation-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Implementation Overview
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Implementation Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blip-llama-implementation" class="md-nav__link">
+  <a href="#blip-llama-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + Llama Implementation
+        BLIP + Llama Configuration
       
     </span>
   </a>
@@ -1263,10 +1279,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blip-mistral-implementation" class="md-nav__link">
+  <a href="#blip-mistral-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + Mistral Implementation
+        BLIP + Mistral Configuration
       
     </span>
   </a>
@@ -1494,6 +1510,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1566,168 +1610,64 @@
 <p>Two LLM variants are supported:
 - <strong>Llama-2-7b-chat-hf</strong>: Meta's conversational model
 - <strong>Mistral-7B-Instruct-v0.2</strong>: Mistral AI's instruction-following model</p>
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<h3 id="blip-llama-implementation">BLIP + Llama Implementation<a class="headerlink" href="#blip-llama-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="sd">Process images using BLIP captions and Llama-2 for VQA</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">login</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># Load data</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">qa_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sampled_qa_file_path</span><span class="p">)</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">captions_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">captions_file_path</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">captions_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Image file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">qa_data</span><span class="p">,</span> <span class="n">captions_data</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># Initialize Llama-2 pipeline</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;LLAMA_TOKEN&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">llamaPipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>                     <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Llama-2-7b-chat-hf&quot;</span><span class="p">,</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>                     <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="blip-mistral-implementation">BLIP + Mistral Implementation<a class="headerlink" href="#blip-mistral-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">Process images using BLIP captions and Mistral for VQA</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># Load data</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">qa_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">sampled_qa_file_path</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">captions_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">captions_file_path</span><span class="p">)</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">captions_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;Image file&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">qa_data</span><span class="p">,</span> <span class="n">captions_data</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># Initialize Mistral pipeline</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="n">mistralPipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>                       <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.2&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>                       <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>                       <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="implementation-overview">Implementation Overview<a class="headerlink" href="#implementation-overview" title="Permanent link">&para;</a></h2>
+<h3 id="blip-llama-configuration">BLIP + Llama Configuration<a class="headerlink" href="#blip-llama-configuration" title="Permanent link">&para;</a></h3>
+<p>The pipeline processes images by:
+1. Loading question-answer pairs and pre-generated BLIP captions
+2. Combining the datasets for unified processing
+3. Initializing the Llama-2 text generation model on available hardware (CUDA/CPU)
+4. Authenticating with HuggingFace for model access</p>
+<h3 id="blip-mistral-configuration">BLIP + Mistral Configuration<a class="headerlink" href="#blip-mistral-configuration" title="Permanent link">&para;</a></h3>
+<p>The pipeline similarly processes images using:
+1. The same data loading approach as Llama
+2. Mistral text generation model configured for optimal performance
+3. Automatic hardware detection and memory optimization</p>
 <h2 id="prompt-templates">Prompt Templates<a class="headerlink" href="#prompt-templates" title="Permanent link">&para;</a></h2>
 <p>The pipeline implements four different prompt configurations, progressively increasing in complexity:</p>
 <h3 id="configuration-1-default-20-tokens">Configuration 1: Default (20 tokens)<a class="headerlink" href="#configuration-1-default-20-tokens" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Baseline performance with minimal constraints</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &#39;&quot;</span> \
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;, Answer the question &#39;&quot;</span> \
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39; </span><span class="se">\n</span><span class="s2"> Answer: &quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>The prompt combines the BLIP caption with the question and generates up to 20 tokens for the answer.</p>
 <p><strong>Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;,
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Answer the question &#39;How many children are there?&#39;
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;,
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Answer the question &#39;How many children are there?&#39;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Answer:
 </code></pre></div></p>
 <h3 id="configuration-2-token-limited-3-tokens">Configuration 2: Token-Limited (3 tokens)<a class="headerlink" href="#configuration-2-token-limited-3-tokens" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Restrict output length to improve answer quality</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">generation_cfg_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>This configuration uses the same prompt structure as Configuration 1 but limits the output to a maximum of 3 tokens, encouraging more concise answers.</p>
 <h3 id="configuration-3-token-limited-prompt-restriction">Configuration 3: Token-Limited + Prompt Restriction<a class="headerlink" href="#configuration-3-token-limited-prompt-restriction" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Combine token limit with explicit single-word instruction</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &#39;&quot;</span> \
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;. Answer in a single word the question: &quot;</span> \
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;</span><span class="se">\n</span><span class="s2"> Answer: &quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="n">generation_cfg_prompt_restriction_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>The prompt includes an explicit instruction to "Answer in a single word" combined with the 3-token limit, providing both generation constraints and prompt-level guidance.</p>
 <p><strong>Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;.
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Answer in a single word the question: &#39;How many children are there?&#39;
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Answer in a single word the question: &#39;How many children are there?&#39;
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Answer:
 </code></pre></div></p>
 <h3 id="configuration-4-enhanced-prompt-best-performance">Configuration 4: Enhanced Prompt (Best Performance)<a class="headerlink" href="#configuration-4-enhanced-prompt-best-performance" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Comprehensive instructions to ensure clean, single-word answers</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &#39;&quot;</span> \
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;. Answer in a single word the question: &#39;&quot;</span> \
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39; </span><span class="se">\n</span><span class="s2"> In plain simple English language without any emoticons or icons or font colors &quot;</span>\
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>                <span class="o">+</span> <span class="s2">&quot;or punctuation marks. I strongly state do not repeat the question, prompt used, disclaimer, explanation&quot;</span> \
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>                <span class="o">+</span> <span class="s2">&quot;or anything apart from answer, that is just provide the answer in a single word in lowercase, the question: &#39;&quot;</span> \
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> \
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>                <span class="o">+</span> <span class="s2">&quot;&#39;. Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.</span><span class="se">\n</span><span class="s2">Answer: &quot;</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="n">prompt_with_generation_cfg_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Image ID&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">],</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>This configuration adds detailed instructions specifying:
+- Use plain English without emoticons, icons, or special formatting
+- Provide only the answer without repeating the question or adding explanations
+- Answer in lowercase single word format
+- Return 'NA' if unable to answer based on the caption
+- Limited to 3 tokens maximum</p>
 <p><strong>Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;.
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Answer in a single word the question: &#39;How many children are there?&#39;
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>In plain simple English language without any emoticons or icons or font colors or punctuation marks.
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>I strongly state do not repeat the question, prompt used, disclaimer, explanation or anything apart from answer,
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>that is just provide the answer in a single word in lowercase, the question: &#39;How many children are there?&#39;.
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Answer in a single word the question: &#39;How many children are there?&#39;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>In plain simple English language without any emoticons or icons or font colors or punctuation marks.
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>I strongly state do not repeat the question, prompt used, disclaimer, explanation or anything apart from answer,
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>that is just provide the answer in a single word in lowercase, the question: &#39;How many children are there?&#39;.
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Answer:
 </code></pre></div></p>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Image → BLIP Captioning → Prompt Construction → LLM Inference → Answer Extraction
+</code></pre></div>
 <ol>
-<li><strong>Input Preparation</strong></li>
-<li>Load question-answer pairs from sampled dataset</li>
-<li>Load pre-generated BLIP captions</li>
-<li>
-<p>Concatenate dataframes for processing</p>
-</li>
-<li>
-<p><strong>Model Initialization</strong></p>
-</li>
-<li>Set up device (CUDA/CPU)</li>
-<li>Load LLM pipeline (Llama or Mistral)</li>
-<li>
-<p>Configure generation parameters</p>
-</li>
-<li>
-<p><strong>Inference Loop</strong></p>
-</li>
-<li>
-<p>For each image-question pair:</p>
-<ul>
-<li>Retrieve BLIP caption</li>
-<li>Construct prompt with specific template</li>
-<li>Generate answer using LLM</li>
-<li>Store results with metadata</li>
-</ul>
-</li>
-<li>
-<p><strong>Output Storage</strong></p>
-</li>
-<li>Save results to CSV files</li>
-<li>Maintain different files for each configuration</li>
-<li>Preserve image ID, caption, question, prompt, and answer</li>
+<li><strong>Load Data</strong>: Question-answer pairs + pre-generated BLIP captions</li>
+<li><strong>Initialize Model</strong>: Load LLM (Llama/Mistral) on CUDA/CPU</li>
+<li><strong>Generate Answers</strong>: For each image-question pair, construct prompt from caption and generate response</li>
+<li><strong>Save Results</strong>: Store outputs (image ID, caption, question, prompt, answer) to CSV files</li>
 </ol>
 <h2 id="performance-metrics">Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permanent link">&para;</a></h2>
 <h3 id="blip-llama-results">BLIP + Llama Results<a class="headerlink" href="#blip-llama-results" title="Permanent link">&para;</a></h3>
@@ -1825,17 +1765,17 @@
 - Spatial arrangement queries ("Where is object X relative to Y?")</p>
 <h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
 <h3 id="output-files-structure">Output Files Structure<a class="headerlink" href="#output-files-structure" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>inferences/
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>├── blip_llama/
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>│   ├── 10k_default_answers.csv
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>│   ├── 10k_generation_cfg_answers.csv
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>│   ├── 10k_generation_cfg_prompt_restriction_answers.csv
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>│   └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>└── blip_mistral/
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    ├── 10k_default_answers.csv
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    ├── 10k_generation_cfg_answers.csv
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    ├── 10k_generation_cfg_prompt_restriction_answers.csv
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>inferences/
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>├── blip_llama/
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>│   ├── 10k_default_answers.csv
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│   ├── 10k_generation_cfg_answers.csv
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>│   ├── 10k_generation_cfg_prompt_restriction_answers.csv
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│   └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>└── blip_mistral/
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    ├── 10k_default_answers.csv
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    ├── 10k_generation_cfg_answers.csv
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    ├── 10k_generation_cfg_prompt_restriction_answers.csv
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
 </code></pre></div>
 <h3 id="csv-output-format">CSV Output Format<a class="headerlink" href="#csv-output-format" title="Permanent link">&para;</a></h3>
 <p>Each output file contains:
@@ -1890,6 +1830,16 @@
 <li><strong>Prompt Engineering</strong>: Explore additional prompt templates and strategies</li>
 <li><strong>Model Scaling</strong>: Test with larger LLM variants (13B, 70B parameters)</li>
 </ol>
+<hr />
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h2>
+<p><strong>← <a href="../">Back to Home</a></strong> | <strong><a href="../pipelines/">Pipeline Overview</a></strong> | <strong><a href="../yolo-llm-pipeline/">Next: YOLO + LLM →</a></strong></p>
+<h3 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../yolo-llm-pipeline/">YOLO + LLM Pipeline</a> - Object detection approach</li>
+<li><a href="../blip-yolo-llm-pipeline/">BLIP + YOLO + LLM Pipeline</a> - Hybrid approach</li>
+<li><a href="../generation-config/">Experiments</a> - Configuration and optimization</li>
+<li><a href="../results/">Results &amp; Analysis</a> - Performance comparison</li>
+</ul>
 
 
 

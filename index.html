@@ -245,18 +245,74 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="pipelines/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="pipelines/" class="md-tabs__link">
+        
   
+  
+    
   
   Pipelines
 
-        </a>
-      </li>
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blip-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
     
+  
+  BLIP + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  YOLO + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="blip-yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BLIP + YOLO + LLM
+
+      </a>
+    </li>
   
 
       
@@ -311,7 +367,7 @@
   
     
   
-  Getting Started
+  Development Guide
 
       </a>
     </li>
@@ -430,6 +486,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#research-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-is-visual-question-answering" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -453,21 +520,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pipeline-performance-exploration" class="md-nav__link">
+  <a href="#pipeline-performance-exploration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Pipeline Performance Exploration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-search-system-enhancement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Search System Enhancement
+        Pipeline Performance Exploration
       
     </span>
   </a>
@@ -492,10 +548,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#best-configuration" class="md-nav__link">
+  <a href="#best-configuration-performance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Configuration
+        Best Configuration Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-context-learning-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Context Learning Results
       
     </span>
   </a>
@@ -507,17 +585,6 @@
     <span class="md-ellipsis">
       
         Model Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-context-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In-Context Learning
       
     </span>
   </a>
@@ -564,10 +631,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pipeline-exploration" class="md-nav__link">
+  <a href="#pipeline-architectures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Exploration
+        🏗️ Pipeline Architectures
       
     </span>
   </a>
@@ -575,21 +642,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#prompt-templates" class="md-nav__link">
+  <a href="#experiments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt Templates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-context-learning_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In-Context Learning
+        🧪 Experiments
       
     </span>
   </a>
@@ -600,7 +656,7 @@
   <a href="#results-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results &amp; Analysis
+        📊 Results &amp; Analysis
       
     </span>
   </a>
@@ -608,10 +664,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#development-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting Started
+        🚀 Development Guide
       
     </span>
   </a>
@@ -674,17 +730,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#research-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Research Context
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#contact" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -720,60 +765,6 @@
   
   
   
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pipelines
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Pipelines
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="pipelines/" class="md-nav__link">
         
@@ -782,7 +773,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Pipelines
   
 
     
@@ -794,10 +785,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -822,10 +812,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -850,10 +839,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -875,14 +863,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -909,10 +889,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -930,8 +910,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1073,7 +1053,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Development Guide
   
 
     
@@ -1113,6 +1093,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#research-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-is-visual-question-answering" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1136,21 +1127,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-pipeline-performance-exploration" class="md-nav__link">
+  <a href="#pipeline-performance-exploration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Pipeline Performance Exploration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-search-system-enhancement" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Search System Enhancement
+        Pipeline Performance Exploration
       
     </span>
   </a>
@@ -1175,10 +1155,32 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#best-configuration" class="md-nav__link">
+  <a href="#best-configuration-performance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Configuration
+        Best Configuration Performance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Impact
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-context-learning-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        In-Context Learning Results
       
     </span>
   </a>
@@ -1190,17 +1192,6 @@
     <span class="md-ellipsis">
       
         Model Comparison
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-context-learning" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In-Context Learning
       
     </span>
   </a>
@@ -1247,10 +1238,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pipeline-exploration" class="md-nav__link">
+  <a href="#pipeline-architectures" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Exploration
+        🏗️ Pipeline Architectures
       
     </span>
   </a>
@@ -1258,21 +1249,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#prompt-templates" class="md-nav__link">
+  <a href="#experiments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prompt Templates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#in-context-learning_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        In-Context Learning
+        🧪 Experiments
       
     </span>
   </a>
@@ -1283,7 +1263,7 @@
   <a href="#results-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Results &amp; Analysis
+        📊 Results &amp; Analysis
       
     </span>
   </a>
@@ -1291,10 +1271,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#getting-started" class="md-nav__link">
+  <a href="#development-guide" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Getting Started
+        🚀 Development Guide
       
     </span>
   </a>
@@ -1357,17 +1337,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#research-context" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Research Context
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#contact" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1410,9 +1379,18 @@
 
 
 <h1 id="visualllm-visual-question-answering">VisualLLM - Visual Question Answering<a class="headerlink" href="#visualllm-visual-question-answering" title="Permanent link">&para;</a></h1>
-<p>This repository explores <strong>Visual Question Answering (VQA)</strong> using Large Language Models without explicit fine-tuning. The project investigates how different pipeline configurations combining vision models (BLIP, YOLO) with LLMs (Llama-2, Mistral) perform on VQA tasks through prompt engineering and in-context learning.</p>
-<p><strong>Institution:</strong> Northeastern University
-<strong>Focus Areas:</strong> Visual Question Answering, Multi-modal AI, Prompt Engineering, In-Context Learning</p>
+<p>This repository explores <strong>Visual Question Answering (VQA)</strong> using Large Language Models without explicit fine-tuning. The project investigates how different pipeline configurations combining vision models (BLIP, YOLO) with LLMs (Llama-2, Mistral) perform on VQA tasks through prompt engineering and in-context learning.This will be helpful for <strong>improving image search and recommendation systems.</strong></p>
+<p><strong>Institution:</strong> Northeastern University  <br />
+<strong>Focus Areas:</strong> Visual Question Answering, Multi-modal AI, Prompt Engineering, In-Context Learning    </p>
+<hr />
+<h2 id="research-context">Research Context<a class="headerlink" href="#research-context" title="Permanent link">&para;</a></h2>
+<p>This project was developed as part of coursework exploring modern approaches to multi-modal AI. The work demonstrates:</p>
+<p>✅ <strong>Zero-shot VQA</strong> - Answer visual questions without task-specific training  <br />
+✅ <strong>Pipeline modularity</strong> - Mix and match vision + language components  <br />
+✅ <strong>Prompt engineering</strong> - Optimize LLM performance through careful prompting  <br />
+✅ <strong>In-context learning</strong> - Leverage few-shot examples for improved accuracy  <br />
+✅ <strong>Comparative analysis</strong> - Systematic evaluation of different approaches    </p>
+<hr />
 <h2 id="what-is-visual-question-answering">What is Visual Question Answering?<a class="headerlink" href="#what-is-visual-question-answering" title="Permanent link">&para;</a></h2>
 <p>Visual Question Answering (VQA) is the challenging task of answering natural language questions about images. The model must understand both the visual content and the question to generate accurate answers.</p>
 <p><strong>Examples:</strong></p>
@@ -1427,55 +1405,206 @@
 <tbody>
 <tr>
 <td>How many children are in bed?</td>
-<td>![Children in bed]</td>
+<td><img alt="Children in bed" src="images/Screenshot_16-4-2024_161553_visualqa.org.jpeg" width="200" /></td>
 <td>2</td>
 </tr>
 <tr>
 <td>Who is wearing glasses?</td>
-<td>![People with glasses]</td>
+<td><img alt="People with glasses" src="images/Screenshot_16-4-2024_161758_visualqa.org.jpeg" width="200" /></td>
 <td>Man</td>
 </tr>
 <tr>
 <td>Is the umbrella upside down?</td>
-<td>![Upside down umbrella]</td>
+<td><img alt="Upside down umbrella" src="images/Screenshot_16-4-2024_16172_visualqa.org.jpeg" width="200" /></td>
 <td>Yes</td>
 </tr>
 </tbody>
 </table>
 <p>This is particularly significant for making LLMs truly multi-modal and enabling them to process and reason about visual information.</p>
-<hr />
 <h2 id="project-overview">Project Overview<a class="headerlink" href="#project-overview" title="Permanent link">&para;</a></h2>
-<p>This research project has <strong>two main aspects</strong>:</p>
-<h3 id="1-pipeline-performance-exploration">1. Pipeline Performance Exploration<a class="headerlink" href="#1-pipeline-performance-exploration" title="Permanent link">&para;</a></h3>
+<p>This research project has main aspects of pipeline performance exploration for the task of VQA which can be used to improve image search and recommendation systems.</p>
+<h3 id="pipeline-performance-exploration">Pipeline Performance Exploration<a class="headerlink" href="#pipeline-performance-exploration" title="Permanent link">&para;</a></h3>
 <p>Investigate different combinations of vision models and LLMs without fine-tuning:
 - <strong>Vision Models:</strong> BLIP (image captioning), YOLO (object detection)
 - <strong>Language Models:</strong> Llama-2-7B, Mistral-7B
 - <strong>Configurations:</strong> BLIP+LLM, YOLO+LLM, BLIP+YOLO+LLM</p>
-<h3 id="2-search-system-enhancement">2. Search System Enhancement<a class="headerlink" href="#2-search-system-enhancement" title="Permanent link">&para;</a></h3>
-<p>Use the best-performing pipeline to improve image search and recommendation systems.</p>
 <hr />
 <h2 id="key-findings">Key Findings<a class="headerlink" href="#key-findings" title="Permanent link">&para;</a></h2>
-<h3 id="best-configuration">Best Configuration<a class="headerlink" href="#best-configuration" title="Permanent link">&para;</a></h3>
-<p><strong>BLIP + YOLO + Mistral</strong> achieves the highest performance:
-- <strong>Exact Match Accuracy:</strong> 51.9%
-- <strong>Semantic Match Accuracy:</strong> 55.1%
-- <strong>Optimal Settings:</strong> Max 3 tokens, single-word prompt instruction</p>
+<h3 id="best-configuration-performance">Best Configuration Performance<a class="headerlink" href="#best-configuration-performance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pipeline</th>
+<th>LLM</th>
+<th>Exact Match</th>
+<th>Semantic Match</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BLIP + YOLO</strong></td>
+<td><strong>Mistral</strong></td>
+<td><strong>51.9%</strong> ⭐</td>
+<td><strong>55.1%</strong></td>
+<td>Best overall configuration</td>
+</tr>
+<tr>
+<td>BLIP + YOLO</td>
+<td>Llama-2</td>
+<td>46.1%</td>
+<td><strong>64.2%</strong> ⭐</td>
+<td>Highest semantic accuracy</td>
+</tr>
+<tr>
+<td>YOLO Only</td>
+<td>Llama-2</td>
+<td>47.1%</td>
+<td>63.0%</td>
+<td>Best for object questions</td>
+</tr>
+<tr>
+<td>BLIP Only</td>
+<td>Llama-2</td>
+<td>45.4%</td>
+<td>59.3%</td>
+<td>Good for scene understanding</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Optimal Settings:</strong> Max 3 tokens + single-word prompt instruction</p>
+<hr />
+<h3 id="configuration-impact">Configuration Impact<a class="headerlink" href="#configuration-impact" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Exact Match</th>
+<th>Semantic Match</th>
+<th>Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default (20 tokens)</td>
+<td>12.9%</td>
+<td>15.2%</td>
+<td>Baseline</td>
+</tr>
+<tr>
+<td>Max 3 tokens</td>
+<td>21.6%</td>
+<td>25.8%</td>
+<td>+67%</td>
+</tr>
+<tr>
+<td><strong>Max 3 tokens + single word prompt</strong></td>
+<td><strong>42.9%</strong></td>
+<td><strong>52.1%</strong></td>
+<td><strong>+233%</strong> ⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Insight:</strong> Proper generation configuration increases accuracy by <strong>4×</strong></p>
+<hr />
+<h3 id="in-context-learning-results">In-Context Learning Results<a class="headerlink" href="#in-context-learning-results" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>ICL Examples</th>
+<th>Exact Match</th>
+<th>Semantic Match</th>
+<th>Performance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1-shot</strong></td>
+<td><strong>48%</strong></td>
+<td><strong>59%</strong></td>
+<td>⭐ Best</td>
+</tr>
+<tr>
+<td>3-shot</td>
+<td>43-44%</td>
+<td>51-54%</td>
+<td>Slight decrease</td>
+</tr>
+<tr>
+<td>5-shot</td>
+<td>14-24%</td>
+<td>18-29%</td>
+<td>Significant drop</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Insight:</strong> More examples ≠ better performance (context relevance matters more than quantity)</p>
+<hr />
 <h3 id="model-comparison">Model Comparison<a class="headerlink" href="#model-comparison" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Llama-2</strong> performs better in most pipeline configurations</li>
-<li><strong>Mistral</strong> excels specifically in the BLIP+YOLO+LLM pipeline</li>
-<li>Quantization has minimal impact on accuracy</li>
-</ul>
-<h3 id="in-context-learning">In-Context Learning<a class="headerlink" href="#in-context-learning" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>1-shot:</strong> Best performance (48% exact, 59% semantic)</li>
-<li><strong>3-shot:</strong> Slight degradation (43-44% exact, 51-54% semantic)</li>
-<li><strong>5-shot:</strong> Significant drop (14-24% exact, 18-29% semantic)</li>
-<li><strong>Insight:</strong> More examples ≠ better (context relevance matters)</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>Llama-2</th>
+<th>Mistral</th>
+<th>Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BLIP pipeline</td>
+<td>45.4% / 59.3%</td>
+<td>42.9% / 52.1%</td>
+<td>Llama-2</td>
+</tr>
+<tr>
+<td>YOLO pipeline</td>
+<td>47.1% / 63.0%</td>
+<td>29.2% / 39.6%</td>
+<td>Llama-2</td>
+</tr>
+<tr>
+<td><strong>BLIP + YOLO pipeline</strong></td>
+<td>46.1% / 64.2%</td>
+<td><strong>51.9% / 55.1%</strong></td>
+<td><strong>Mistral</strong> ⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Insight:</strong> Model performance is pipeline-dependent; Mistral excels in hybrid configurations</p>
+<hr />
 <h3 id="baseline-comparison">Baseline Comparison<a class="headerlink" href="#baseline-comparison" title="Permanent link">&para;</a></h3>
-<p><strong>BLIP-VQA</strong> (fine-tuned model): 90.5% exact, 96.1% semantic</p>
-<p><strong>Gap:</strong> Generic pipelines achieve ~50% of fine-tuned performance without training</p>
+<table>
+<thead>
+<tr>
+<th>Model Type</th>
+<th>Exact Match</th>
+<th>Semantic Match</th>
+<th>Training Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>BLIP-VQA</strong> (fine-tuned)</td>
+<td><strong>90.5%</strong></td>
+<td><strong>96.1%</strong></td>
+<td>Yes (supervised)</td>
+</tr>
+<tr>
+<td>Our Best (BLIP+YOLO+Mistral)</td>
+<td>51.9%</td>
+<td>55.1%</td>
+<td>No (zero-shot)</td>
+</tr>
+<tr>
+<td><strong>Performance Gap</strong></td>
+<td><strong>38.6%</strong></td>
+<td><strong>41.0%</strong></td>
+<td>Trade-off</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key Insight:</strong> Generic pipelines achieve ~50-57% of fine-tuned performance without any task-specific training</p>
 <hr />
 <h2 id="technologies">Technologies<a class="headerlink" href="#technologies" title="Permanent link">&para;</a></h2>
 <ul>
@@ -1490,25 +1619,43 @@
 </ul>
 <hr />
 <h2 id="quick-navigation">Quick Navigation<a class="headerlink" href="#quick-navigation" title="Permanent link">&para;</a></h2>
-<h3 id="pipeline-exploration"><a href="pipelines/">Pipeline Exploration</a><a class="headerlink" href="#pipeline-exploration" title="Permanent link">&para;</a></h3>
-<p>Comparison of different vision model + LLM combinations.</p>
-<p><strong>Key Topics:</strong> BLIP+LLM, YOLO+LLM, BLIP+YOLO+LLM, performance analysis</p>
+<h3 id="pipeline-architectures">🏗️ Pipeline Architectures<a class="headerlink" href="#pipeline-architectures" title="Permanent link">&para;</a></h3>
+<p><strong><a href="pipelines/">Pipeline Overview</a></strong> - Comparison of three distinct pipeline configurations</p>
+<ul>
+<li><strong><a href="blip-llm-pipeline/">BLIP + LLM Pipeline</a></strong> - Caption-based approach for scene understanding</li>
+<li><strong><a href="yolo-llm-pipeline/">YOLO + LLM Pipeline</a></strong> - Object detection approach for counting and identification</li>
+<li><strong><a href="blip-yolo-llm-pipeline/">BLIP + YOLO + LLM Pipeline</a></strong> - Hybrid approach combining both modalities</li>
+</ul>
+<p><strong>Key Topics:</strong> Architecture comparison, data flow, strengths &amp; weaknesses, use case recommendations</p>
 <hr />
-<h3 id="prompt-templates"><a href="prompt-templates/">Prompt Templates</a><a class="headerlink" href="#prompt-templates" title="Permanent link">&para;</a></h3>
-<p>Investigation of 7 different prompt templates and their impact on accuracy.</p>
-<p><strong>Key Topics:</strong> Template design, instruction clarity, output formatting</p>
+<h3 id="experiments">🧪 Experiments<a class="headerlink" href="#experiments" title="Permanent link">&para;</a></h3>
+<p><strong><a href="generation-config/">Generation Configuration</a></strong> - Impact of token limits and prompt instructions</p>
+<ul>
+<li>Max tokens optimization (20 → 3 tokens)</li>
+<li>Single-word instruction effectiveness</li>
+<li>4x accuracy improvement through configuration</li>
+</ul>
+<p><strong><a href="prompt-templates/">Prompt Templates</a></strong> - Investigation of 7 different prompt templates</p>
+<ul>
+<li>Template design principles</li>
+<li>Model-aware vs. model-agnostic prompts</li>
+<li>Impact on accuracy (11% to 51.9% variation)</li>
+</ul>
+<p><strong><a href="in-context-learning/">In-Context Learning</a></strong> - Few-shot learning with 1, 3, and 5 examples</p>
+<ul>
+<li>Optimal example count (1-shot best)</li>
+<li>Context relevance vs. quantity</li>
+<li>Performance degradation with too many examples</li>
+</ul>
+<p><strong>Key Topics:</strong> Experimental methodology, optimization strategies, configuration impact</p>
 <hr />
-<h3 id="in-context-learning_1"><a href="in-context-learning/">In-Context Learning</a><a class="headerlink" href="#in-context-learning_1" title="Permanent link">&para;</a></h3>
-<p>Analysis of few-shot learning with 1, 3, and 5 example demonstrations.</p>
-<p><strong>Key Topics:</strong> ICL effectiveness, example selection, context limitations</p>
-<hr />
-<h3 id="results-analysis"><a href="results/">Results &amp; Analysis</a><a class="headerlink" href="#results-analysis" title="Permanent link">&para;</a></h3>
+<h3 id="results-analysis">📊 <a href="results/">Results &amp; Analysis</a><a class="headerlink" href="#results-analysis" title="Permanent link">&para;</a></h3>
 <p>Comprehensive experimental results with accuracy metrics and insights.</p>
-<p><strong>Key Topics:</strong> Performance tables, error analysis, model comparison</p>
+<p><strong>Key Topics:</strong> Performance tables, error analysis, model comparison, best configurations</p>
 <hr />
-<h3 id="getting-started"><a href="getting-started/">Getting Started</a><a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<h3 id="development-guide">🚀 <a href="getting-started/">Development Guide</a><a class="headerlink" href="#development-guide" title="Permanent link">&para;</a></h3>
 <p>Setup instructions, usage examples, and code walkthrough.</p>
-<p><strong>Key Topics:</strong> Installation, running experiments, reproducing results</p>
+<p><strong>Key Topics:</strong> Installation, running experiments, reproducing results, dataset preparation</p>
 <hr />
 <h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>VisualLLM/
@@ -1564,17 +1711,9 @@
 </code></pre></div>
 <p>For detailed setup and usage, see <a href="getting-started/">Getting Started</a>.</p>
 <hr />
-<h2 id="research-context">Research Context<a class="headerlink" href="#research-context" title="Permanent link">&para;</a></h2>
-<p>This project was developed as part of coursework exploring modern approaches to multi-modal AI. The work demonstrates:</p>
-<p>✅ <strong>Zero-shot VQA</strong> - Answer visual questions without task-specific training
-✅ <strong>Pipeline modularity</strong> - Mix and match vision + language components
-✅ <strong>Prompt engineering</strong> - Optimize LLM performance through careful prompting
-✅ <strong>In-context learning</strong> - Leverage few-shot examples for improved accuracy
-✅ <strong>Comparative analysis</strong> - Systematic evaluation of different approaches</p>
-<hr />
 <h2 id="contact">Contact<a class="headerlink" href="#contact" title="Permanent link">&para;</a></h2>
-<p><strong>Author:</strong> Praphul Samavedam
-<strong>GitHub:</strong> <a href="https://github.com/PraphulSamavedam">@PraphulSamavedam</a></p>
+<p><strong>Author:</strong> Praphul Samavedam  <br />
+<strong>GitHub:</strong> <a href="https://github.com/PraphulSamavedam">@PraphulSamavedam</a>    </p>
 <hr />
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
 <ul>

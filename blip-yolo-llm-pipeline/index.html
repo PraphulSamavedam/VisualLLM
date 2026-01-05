@@ -244,21 +244,77 @@
   
   
   
-    
+  
+    <li class="md-tabs__item">
+      <a href="../pipelines/" class="md-tabs__link">
+        
   
   
     
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../pipelines/" class="md-tabs__link">
-          
-  
   
   Pipelines
 
-        </a>
-      </li>
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../blip-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
     
+  
+  BLIP + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../yolo-llm-pipeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  YOLO + LLM
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  BLIP + YOLO + LLM
+
+      </a>
+    </li>
   
 
       
@@ -313,7 +369,7 @@
   
     
   
-  Getting Started
+  Development Guide
 
       </a>
     </li>
@@ -396,63 +452,6 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Pipelines
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Pipelines
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -463,7 +462,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    Pipelines
   
 
     
@@ -475,10 +474,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -503,10 +501,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -531,10 +528,9 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
     
@@ -672,22 +668,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#implementation-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Implementation Overview
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Implementation Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blip-yolo-llama-implementation" class="md-nav__link">
+  <a href="#blip-yolo-llama-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + YOLO + Llama Implementation
+        BLIP + YOLO + Llama Configuration
       
     </span>
   </a>
@@ -695,10 +691,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blip-yolo-mistral-implementation" class="md-nav__link">
+  <a href="#blip-yolo-mistral-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + YOLO + Mistral Implementation
+        BLIP + YOLO + Mistral Configuration
       
     </span>
   </a>
@@ -1256,10 +1252,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-improved-icl-strategy" class="md-nav__link">
+  <a href="#6-improved-in-context-learning-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Improved ICL Strategy
+        6. Improved In-Context Learning Strategy
       
     </span>
   </a>
@@ -1365,17 +1361,37 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1403,10 +1419,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
@@ -1424,8 +1440,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1567,7 +1583,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Development Guide
   
 
     
@@ -1679,22 +1695,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
+  <a href="#implementation-overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Implementation
+        Implementation Overview
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Implementation Overview">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blip-yolo-llama-implementation" class="md-nav__link">
+  <a href="#blip-yolo-llama-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + YOLO + Llama Implementation
+        BLIP + YOLO + Llama Configuration
       
     </span>
   </a>
@@ -1702,10 +1718,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#blip-yolo-mistral-implementation" class="md-nav__link">
+  <a href="#blip-yolo-mistral-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BLIP + YOLO + Mistral Implementation
+        BLIP + YOLO + Mistral Configuration
       
     </span>
   </a>
@@ -2263,10 +2279,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#6-improved-icl-strategy" class="md-nav__link">
+  <a href="#6-improved-in-context-learning-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Improved ICL Strategy
+        6. Improved In-Context Learning Strategy
       
     </span>
   </a>
@@ -2372,6 +2388,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Pages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2470,198 +2514,84 @@
 <p>Two LLM variants are supported:
 - <strong>Llama-2-7b-chat-hf</strong>: Best overall performance (Semantic: 0.6423)
 - <strong>Mistral-7B-Instruct-v0.2</strong>: Competitive performance with proper prompting</p>
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<h3 id="blip-yolo-llama-implementation">BLIP + YOLO + Llama Implementation<a class="headerlink" href="#blip-yolo-llama-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">Hybrid pipeline using BLIP captions, YOLO detections, and Llama-2</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">huggingface_hub</span><span class="w"> </span><span class="kn">import</span> <span class="n">login</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Clear GPU cache for optimal memory</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="c1"># Load pre-computed data (includes both captions and detections)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">detections_file_path</span><span class="p">)</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="c1"># Initialize Llama-2 pipeline</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="n">token</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;LLAMA_TOKEN&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">login</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">llamaPipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>                     <span class="n">model</span><span class="o">=</span><span class="s2">&quot;meta-llama/Llama-2-7b-chat-hf&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>                     <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="blip-yolo-mistral-implementation">BLIP + YOLO + Mistral Implementation<a class="headerlink" href="#blip-yolo-mistral-implementation" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="sd">Hybrid pipeline using BLIP captions, YOLO detections, and Mistral</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">pipeline</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">tqdm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tqdm</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Clear GPU cache for optimal memory</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="c1"># Load pre-computed data (includes both captions and detections)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">detections_file_path</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c1"># Initialize Mistral pipeline</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="n">mistralPipe</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span><span class="s2">&quot;text-generation&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>                       <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.2&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>                       <span class="n">return_full_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>                       <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>                       <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="implementation-overview">Implementation Overview<a class="headerlink" href="#implementation-overview" title="Permanent link">&para;</a></h2>
+<h3 id="blip-yolo-llama-configuration">BLIP + YOLO + Llama Configuration<a class="headerlink" href="#blip-yolo-llama-configuration" title="Permanent link">&para;</a></h3>
+<p>The hybrid pipeline processes images by:
+1. Clearing GPU cache for optimal memory management
+2. Loading pre-computed data containing both BLIP captions and YOLO detections
+3. Initializing the Llama-2 text generation model on available hardware
+4. Authenticating with HuggingFace for model access</p>
+<h3 id="blip-yolo-mistral-configuration">BLIP + YOLO + Mistral Configuration<a class="headerlink" href="#blip-yolo-mistral-configuration" title="Permanent link">&para;</a></h3>
+<p>The pipeline similarly processes images using:
+1. GPU cache management for efficient processing
+2. Loading the same pre-computed dual-context data (captions and detections)
+3. Mistral text generation model configured with optimized data types
+4. Automatic hardware detection and configuration</p>
 <h2 id="prompt-templates">Prompt Templates<a class="headerlink" href="#prompt-templates" title="Permanent link">&para;</a></h2>
 <p>The hybrid pipeline implements four configurations combining both caption and detection information:</p>
 <h3 id="configuration-1-default-20-tokens">Configuration 1: Default (20 tokens)<a class="headerlink" href="#configuration-1-default-20-tokens" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Baseline with dual-context</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &quot;</span> \
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, and Object detections (generated by YOLOv5): &quot;</span> \
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Detections&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, Answer the question &#39;&quot;</span> \
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39; </span><span class="se">\n</span><span class="s2"> Answer: &quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Caption&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="s1">&#39;Detections&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Detections&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">20</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>The prompt combines both BLIP caption and YOLO detections with the question, generating up to 20 tokens for the answer. This provides the LLM with comprehensive visual context from both sources.</p>
 <p><strong>Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Based on the image caption (generated by BLIP model): Children are sleeping in bed,
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>and Object detections (generated by YOLOv5): person (0.95), person (0.92), bed (0.89),
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Answer the question &#39;How many children are there?&#39;
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Based on the image caption (generated by BLIP model): Children are sleeping in bed,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>and Object detections (generated by YOLOv5): person (0.95), person (0.92), bed (0.89),
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Answer the question &#39;How many children are there?&#39;
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Answer:
 </code></pre></div></p>
 <h3 id="configuration-2-token-limited-3-tokens">Configuration 2: Token-Limited (3 tokens)<a class="headerlink" href="#configuration-2-token-limited-3-tokens" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Restrict output for concise answers</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">generation_cfg_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Caption&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="s1">&#39;Detections&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Detections&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>This configuration uses the same dual-context prompt structure as Configuration 1 but limits the output to a maximum of 3 tokens, encouraging more focused and concise responses.</p>
 <h3 id="configuration-3-token-limited-prompt-restriction">Configuration 3: Token-Limited + Prompt Restriction<a class="headerlink" href="#configuration-3-token-limited-prompt-restriction" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Combine token limit with single-word instruction</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &#39;&quot;</span> \
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, and Object detections (generated by YOLOv5): &quot;</span> \
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>                <span class="o">+</span> <span class="s2">&quot;. Answer in a single word the question: &quot;</span> \
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Answer: &quot;</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">generation_cfg_prompt_restriction_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Image ID&#39;</span><span class="p">],</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>    <span class="s1">&#39;Detections&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Detections&#39;</span><span class="p">],</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Prompt&#39;</span><span class="p">],</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>The prompt includes an explicit instruction to "Answer in a single word" combined with the 3-token limit and dual context from both BLIP and YOLO, providing comprehensive information with strict output constraints.</p>
 <p><strong>Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;,
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>and Object detections (generated by YOLOv5): person (0.95), person (0.92), bed (0.89).
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Answer in a single word the question: &#39;How many children are there?&#39;
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping in bed&#39;,
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>and Object detections (generated by YOLOv5): person (0.95), person (0.92), bed (0.89).
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Answer in a single word the question: &#39;How many children are there?&#39;
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Answer:
 </code></pre></div></p>
 <h3 id="configuration-4-enhanced-prompt-best-performance">Configuration 4: Enhanced Prompt (Best Performance)<a class="headerlink" href="#configuration-4-enhanced-prompt-best-performance" title="Permanent link">&para;</a></h3>
 <p><strong>Purpose</strong>: Comprehensive instructions with dual context</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Based on the image caption (generated by BLIP model): &#39;&quot;</span> \
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">]</span> \
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>                <span class="o">+</span> <span class="s2">&quot; and Object detections (generated by YOLOv5): &quot;</span> \
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Detections&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39;. Answer in a single word the question: &#39;&quot;</span> \
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;&#39; </span><span class="se">\n</span><span class="s2"> In plain simple English language without any emoticons or icons or font colors &quot;</span>\
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>                <span class="o">+</span> <span class="s2">&quot;or punctuation marks. I strongly state do not repeat the question, prompt used, disclaimer, explanation&quot;</span> \
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>                <span class="o">+</span> <span class="s2">&quot;or anything apart from answer, that is just provide the answer in a single word in lowercase, the question: &#39;&quot;</span> \
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>                <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Question&quot;</span><span class="p">]</span> \
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>                <span class="o">+</span> <span class="s2">&quot;&#39;. Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.</span><span class="se">\n</span><span class="s2">Answer: &quot;</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="n">prompt_with_generation_cfg_answers</span> <span class="o">=</span> <span class="p">[{</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    <span class="s1">&#39;Image ID&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Image ID&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    <span class="s1">&#39;Caption&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Generated Caption&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    <span class="s1">&#39;Detections&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Generated Detections&#39;</span><span class="p">],</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    <span class="s1">&#39;Question&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s1">&#39;Question&#39;</span><span class="p">],</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    <span class="s1">&#39;Prompt&#39;</span><span class="p">:</span> <span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    <span class="s1">&#39;Generated Answer&#39;</span><span class="p">:</span> <span class="n">llamaPipe</span><span class="p">(</span><span class="n">instance</span><span class="p">[</span><span class="s2">&quot;Prompt&quot;</span><span class="p">],</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>                                   <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;generated_text&#39;</span><span class="p">]</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="p">}</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">())]</span>
-</code></pre></div>
+<p>This configuration adds detailed instructions specifying:
+- Leverage both BLIP caption and YOLO detections for comprehensive context
+- Use plain English without emoticons, icons, or special formatting
+- Provide only the answer without repeating the question or adding explanations
+- Answer in lowercase single word format
+- Return 'NA' if unable to answer based on the provided information
+- Limited to 3 tokens maximum</p>
 <p><strong>Complete Example</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping calmly in bed&#39;
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>and Object detections (generated by YOLOv5): &#39;person (0.95), person (0.92), bed (0.89), pillow (0.82)&#39;.
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Answer in a single word the question: &#39;How many children are there?&#39;
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>In plain simple English language without any emoticons or icons or font colors or punctuation marks.
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>I strongly state do not repeat the question, prompt used, disclaimer, explanation or anything apart from answer,
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>that is just provide the answer in a single word in lowercase, the question: &#39;How many children are there?&#39;.
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>Answer:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Based on the image caption (generated by BLIP model): &#39;Children are sleeping calmly in bed&#39;
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>and Object detections (generated by YOLOv5): &#39;person (0.95), person (0.92), bed (0.89), pillow (0.82)&#39;.
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Answer in a single word the question: &#39;How many children are there?&#39;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>In plain simple English language without any emoticons or icons or font colors or punctuation marks.
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>I strongly state do not repeat the question, prompt used, disclaimer, explanation or anything apart from answer,
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>that is just provide the answer in a single word in lowercase, the question: &#39;How many children are there?&#39;.
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Remember if you are unable to answer the question based on the caption provided by BLIP, mention &#39;NA&#39;.
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Answer:
 </code></pre></div></p>
 <h2 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>                    Image
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                      │
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>           ┌──────────┴──────────┐
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>           ▼                     ▼
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    BLIP Caption          YOLO Detection
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>           │                     │
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>           └──────────┬──────────┘
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                      ▼
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>          Dual-Context Prompt Construction
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>                      │
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>                      ▼
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>              LLM Inference
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                      │
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>                      ▼
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>            Answer Extraction
+</code></pre></div>
 <ol>
-<li><strong>Input Preparation</strong></li>
-<li>Load question-answer pairs from sampled dataset</li>
-<li>Load pre-computed BLIP captions</li>
-<li>Load pre-computed YOLO detections</li>
-<li>
-<p>Merge all data sources into unified dataframe</p>
-</li>
-<li>
-<p><strong>Model Initialization</strong></p>
-</li>
-<li>Set up device (CUDA/CPU)</li>
-<li>Clear GPU cache to optimize memory</li>
-<li>Load LLM pipeline (Llama or Mistral)</li>
-<li>
-<p>Configure generation parameters</p>
-</li>
-<li>
-<p><strong>Dual-Context Construction</strong></p>
-</li>
-<li>
-<p>For each image-question pair:</p>
-<ul>
-<li>Retrieve BLIP caption</li>
-<li>Retrieve YOLO detections</li>
-<li>Construct unified prompt with both contexts</li>
-<li>Include question and instructions</li>
-</ul>
-</li>
-<li>
-<p><strong>Inference Loop</strong></p>
-</li>
-<li>Generate answer using LLM</li>
-<li>
-<p>Store results with complete metadata:</p>
-<ul>
-<li>Image ID</li>
-<li>Caption</li>
-<li>Detections</li>
-<li>Question</li>
-<li>Prompt</li>
-<li>Generated Answer</li>
-</ul>
-</li>
-<li>
-<p><strong>Output Storage</strong></p>
-</li>
-<li>Save results to CSV files</li>
-<li>Maintain different files for each configuration</li>
-<li>Enable detailed analysis of contribution from each component</li>
+<li><strong>Load Data</strong>: Question-answer pairs + pre-computed BLIP captions + pre-computed YOLO detections</li>
+<li><strong>Initialize Model</strong>: Load LLM (Llama/Mistral) on CUDA/CPU with GPU cache clearing</li>
+<li><strong>Merge Contexts</strong>: Combine caption and detections into unified dual-context prompt for each image-question pair</li>
+<li><strong>Generate Answers</strong>: LLM processes dual-context prompt and generates response</li>
+<li><strong>Save Results</strong>: Store complete outputs (image ID, caption, detections, question, prompt, answer) to CSV files</li>
 </ol>
 <h2 id="performance-metrics">Performance Metrics<a class="headerlink" href="#performance-metrics" title="Permanent link">&para;</a></h2>
 <h3 id="blip-yolo-llama-results-best-performer">BLIP + YOLO + Llama Results (BEST PERFORMER)<a class="headerlink" href="#blip-yolo-llama-results-best-performer" title="Permanent link">&para;</a></h3>
@@ -2908,17 +2838,17 @@
 - Cost-sensitive applications where marginal improvement doesn't justify expense</p>
 <h2 id="configuration-files">Configuration Files<a class="headerlink" href="#configuration-files" title="Permanent link">&para;</a></h2>
 <h3 id="output-files-structure">Output Files Structure<a class="headerlink" href="#output-files-structure" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>inferences/
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── blip_yolo_llama/
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>│   ├── 10k_default_answers.csv
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>│   ├── 10k_generation_cfg_answers.csv
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>│   ├── 10k_generation_cfg_prompt_restriction_answers.csv
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>│   └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>└── blip_yolo_mistral/
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    ├── 10k_default_answers.csv
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>    ├── 10k_generation_cfg_answers.csv
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    ├── 10k_generation_cfg_prompt_restriction_answers.csv
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>    └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>inferences/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── blip_yolo_llama/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>│   ├── 10k_default_answers.csv
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>│   ├── 10k_generation_cfg_answers.csv
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>│   ├── 10k_generation_cfg_prompt_restriction_answers.csv
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>│   └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>└── blip_yolo_mistral/
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    ├── 10k_default_answers.csv
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    ├── 10k_generation_cfg_answers.csv
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>    ├── 10k_generation_cfg_prompt_restriction_answers.csv
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    └── 10k_enhanced_prompt_with_generation_cfg_answers.csv
 </code></pre></div>
 <h3 id="csv-output-format">CSV Output Format<a class="headerlink" href="#csv-output-format" title="Permanent link">&para;</a></h3>
 <p>Each output file contains:
@@ -2935,21 +2865,16 @@
 - Improving prompt templates</p>
 <h2 id="technical-considerations">Technical Considerations<a class="headerlink" href="#technical-considerations" title="Permanent link">&para;</a></h2>
 <h3 id="memory-management">Memory Management<a class="headerlink" href="#memory-management" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Critical for hybrid pipeline</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
-</code></pre></div>
-<p><strong>Why Important</strong>:
-- Both BLIP and YOLO outputs are pre-computed (offline)
+<p>The pipeline clears GPU cache before processing, which is critical because:
+- Both BLIP and YOLO outputs are pre-computed offline
 - Only LLM loads into GPU during inference
 - Clears any residual memory from previous operations
-- Prevents OOM errors during batch processing</p>
+- Prevents out-of-memory errors during batch processing</p>
 <h3 id="data-pipeline-efficiency">Data Pipeline Efficiency<a class="headerlink" href="#data-pipeline-efficiency" title="Permanent link">&para;</a></h3>
 <p><strong>Pre-computation Strategy</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Offline:  Image → BLIP → Save Caption
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>          Image → YOLO → Save Detections
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Online:   Load Captions + Detections → Construct Prompt → LLM → Answer
-</code></pre></div></p>
+The pipeline uses a two-phase approach:
+- <strong>Offline Phase</strong>: Process images through BLIP and YOLO once, saving outputs
+- <strong>Online Phase</strong>: Load saved captions and detections, construct prompts, run LLM inference</p>
 <p><strong>Benefits</strong>:
 - BLIP and YOLO run only once per image
 - Inference pipeline only runs LLM
@@ -2960,9 +2885,8 @@
 1. <strong>Too Short</strong>: May not leverage dual context effectively
 2. <strong>Too Long</strong>: May dilute focus or confuse LLM
 3. <strong>Optimal</strong>: Clearly structure both information sources</p>
-<p><strong>Best Practice</strong>:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Structure: Caption: {caption} + Detections: {detections} + Question: {question}
-</code></pre></div></p>
+<p><strong>Best Practice Structure</strong>:
+Combine caption information, detection data, and the question in a clear, organized format that allows the LLM to effectively utilize both visual contexts.</p>
 <h2 id="comparison-with-specialized-vqa-model">Comparison with Specialized VQA Model<a class="headerlink" href="#comparison-with-specialized-vqa-model" title="Permanent link">&para;</a></h2>
 <h3 id="performance-vs-blip-vqa-fine-tuned-model">Performance vs BLIP-VQA (Fine-tuned Model)<a class="headerlink" href="#performance-vs-blip-vqa-fine-tuned-model" title="Permanent link">&para;</a></h3>
 <table>
@@ -3093,46 +3017,41 @@
 - Need for semantic similarity-based example selection</p>
 <h2 id="future-improvements">Future Improvements<a class="headerlink" href="#future-improvements" title="Permanent link">&para;</a></h2>
 <h3 id="1-intelligent-context-fusion">1. Intelligent Context Fusion<a class="headerlink" href="#1-intelligent-context-fusion" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Question-aware context weighting</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">if</span> <span class="n">is_counting_question</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>    <span class="n">weight_yolo_higher</span><span class="p">()</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="k">elif</span> <span class="n">is_scene_question</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">weight_blip_higher</span><span class="p">()</span>
-</code></pre></div>
+<p>Implement question-aware context weighting that dynamically adjusts the importance of BLIP captions vs YOLO detections based on question type. Counting questions would emphasize detection data, while scene understanding questions would prioritize caption information.</p>
 <h3 id="2-spatial-relationship-integration">2. Spatial Relationship Integration<a class="headerlink" href="#2-spatial-relationship-integration" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Add YOLO bounding box coordinates</li>
-<li>Encode spatial relationships in prompt</li>
-<li>Example: "person (0.95) left of bed (0.89)"</li>
+<li>Add YOLO bounding box coordinates to provide spatial context</li>
+<li>Encode spatial relationships in prompt structure</li>
+<li>Example enhancement: "person (0.95) located left of bed (0.89)"</li>
 </ul>
 <h3 id="3-hierarchical-prompting">3. Hierarchical Prompting<a class="headerlink" href="#3-hierarchical-prompting" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Level 1: Overall scene (BLIP)
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Level 2: Object details (YOLO)
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Level 3: Specific question focus
-</code></pre></div>
+<p>Implement a multi-level information structure:
+- Level 1: Overall scene understanding from BLIP
+- Level 2: Object-level details from YOLO
+- Level 3: Question-specific focus and constraints</p>
 <h3 id="4-dynamic-context-selection">4. Dynamic Context Selection<a class="headerlink" href="#4-dynamic-context-selection" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Analyze question to determine needed context</li>
-<li>Include only relevant information</li>
-<li>Reduce prompt length for simple questions</li>
+<li>Analyze question type to determine which context is most relevant</li>
+<li>Include only necessary information to reduce prompt length</li>
+<li>Optimize for simple questions that don't need dual context</li>
 </ul>
 <h3 id="5-multi-modal-llm-integration">5. Multi-Modal LLM Integration<a class="headerlink" href="#5-multi-modal-llm-integration" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Explore models like LLaVA, BLIP-2, InstructBLIP</li>
-<li>Compare hybrid pipeline vs native multi-modal</li>
-<li>Benchmark zero-shot capabilities</li>
+<li>Explore native multi-modal models like LLaVA, BLIP-2, InstructBLIP</li>
+<li>Compare hybrid pipeline approach vs end-to-end multi-modal models</li>
+<li>Benchmark zero-shot capabilities across different architectures</li>
 </ul>
-<h3 id="6-improved-icl-strategy">6. Improved ICL Strategy<a class="headerlink" href="#6-improved-icl-strategy" title="Permanent link">&para;</a></h3>
+<h3 id="6-improved-in-context-learning-strategy">6. Improved In-Context Learning Strategy<a class="headerlink" href="#6-improved-in-context-learning-strategy" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Semantic similarity-based example selection</li>
-<li>Question-type specific examples</li>
-<li>Optimal number of examples per question category</li>
+<li>Implement semantic similarity-based example selection</li>
+<li>Use question-type specific examples for better relevance</li>
+<li>Determine optimal number of examples per question category</li>
 </ul>
 <h3 id="7-prompt-optimization">7. Prompt Optimization<a class="headerlink" href="#7-prompt-optimization" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Systematic template exploration</li>
-<li>A/B testing different structures</li>
-<li>Question-type specific templates</li>
+<li>Conduct systematic template exploration and testing</li>
+<li>Perform A/B testing on different prompt structures</li>
+<li>Develop question-type specific templates for specialized performance</li>
 </ul>
 <h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="1-pipeline-selection">1. Pipeline Selection<a class="headerlink" href="#1-pipeline-selection" title="Permanent link">&para;</a></h3>
@@ -3160,14 +3079,10 @@
 <li>Monitor memory usage during inference</li>
 </ul>
 <h3 id="5-question-routing-optional">5. Question Routing (Optional)<a class="headerlink" href="#5-question-routing-optional" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">route_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="k">if</span> <span class="n">is_counting</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="k">return</span> <span class="n">yolo_llama_pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="k">elif</span> <span class="n">is_scene_description</span><span class="p">(</span><span class="n">question</span><span class="p">):</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>        <span class="k">return</span> <span class="n">blip_llama_pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        <span class="k">return</span> <span class="n">hybrid_pipeline</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">question</span><span class="p">)</span>
-</code></pre></div>
+<p>Implement intelligent question routing to select the most appropriate pipeline:
+- Counting questions: Route to YOLO + LLM pipeline for best precision
+- Scene description questions: Route to BLIP + LLM for holistic understanding
+- Complex or ambiguous questions: Use hybrid pipeline for comprehensive context</p>
 <h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
 <p>The BLIP + YOLO + LLM hybrid pipeline represents the <strong>most comprehensive approach</strong> to Visual Question Answering in this project. By combining:</p>
 <ul>
@@ -3176,6 +3091,16 @@
 <li><strong>Reasoning capabilities</strong> from LLMs</li>
 </ul>
 <p>It achieves the <strong>highest semantic match accuracy (0.6423)</strong> and demonstrates robust performance across diverse question types. While more resource-intensive than single-model approaches, the hybrid pipeline's superior semantic understanding makes it ideal for production VQA systems requiring broad question coverage and high-quality answers.</p>
+<hr />
+<h2 id="navigation">Navigation<a class="headerlink" href="#navigation" title="Permanent link">&para;</a></h2>
+<p><strong>← <a href="../">Back to Home</a></strong> | <strong><a href="../pipelines/">Pipeline Overview</a></strong></p>
+<h3 id="related-pages">Related Pages<a class="headerlink" href="#related-pages" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../blip-llm-pipeline/">BLIP + LLM Pipeline</a> - Caption-based approach</li>
+<li><a href="../yolo-llm-pipeline/">YOLO + LLM Pipeline</a> - Object detection approach</li>
+<li><a href="../generation-config/">Experiments</a> - Configuration and optimization</li>
+<li><a href="../results/">Results &amp; Analysis</a> - Performance comparison</li>
+</ul>
 
 
 
