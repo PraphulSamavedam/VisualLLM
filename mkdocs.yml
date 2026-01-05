@@ -1,0 +1,109 @@
+site_name: VisualLLM - Visual Question Answering
+site_description: Exploring LLM pipelines for Visual Question Answering without explicit fine-tuning
+site_author: Praphul Samavedam
+site_url: https://PraphulSamavedam.github.io/VisualLLM/
+
+# Repository
+repo_name: VisualLLM
+repo_url: https://github.com/PraphulSamavedam/VisualLLM
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024-2026
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-5
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-2
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+
+# Page tree
+nav:
+  - Home: index.md
+  - Pipelines:
+    - Overview: pipelines.md
+    - BLIP + LLM: blip-llm-pipeline.md
+    - YOLO + LLM: yolo-llm-pipeline.md
+    - BLIP + YOLO + LLM: blip-yolo-llm-pipeline.md
+  - Experiments:
+    - Generation Configuration: generation-config.md
+    - Prompt Templates: prompt-templates.md
+    - In-Context Learning: in-context-learning.md
+  - Results & Analysis: results.md
+  - Getting Started: getting-started.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/PraphulSamavedam
