@@ -33,13 +33,15 @@ Pipeline B: YOLO + LLM
               (Local)      Reasoning
 
 Pipeline C: BLIP + YOLO + LLM (Hybrid)
-┌───────┐     ┌──────┐  ┐
-│ Image │ ──► │ BLIP │  ├─► Combined ──► ┌─────┐ ──► ┌────────┐
-└───────┘  ┌─►│ YOLO │  ┘   Context      │ LLM │     │ Answer │
-           │  └──────┘                    └─────┘     └────────┘
-           └───────────┘
-           Parallel      Caption +         Multi-modal
-           Processing    Detections        Reasoning
+┌───────┐     ┌──────┐
+|  I    | ──► | BLIP |─►┐ ┌──────────┐       ┌─────┐           ┌────────┐
+│  M    │     └──────┘  └ | Combined | ────► │ LLM │ ────────► │ Answer │
+|  A    |     ┌──────┐  ┌ | Context  |       └─────┘           └────────┘
+|  G    | ──► │ YOLO │─►┘ └──────────┘    
+|  E    |     └──────┘ 
+└───────┘
+              Parallel      Caption     Multi-modal
+             Processing    Detections    Reasoning
 ```
 
 ---
@@ -62,72 +64,72 @@ Pipeline C: BLIP + YOLO + LLM (Hybrid)
 
 #### Pipeline A: BLIP + LLM
 
-**✅ Strengths:**
-- Captures overall scene understanding
-- Good for descriptive questions ("What is happening?")
-- Natural language context for LLM
-- Understands mood, atmosphere, context
-- Computationally lighter (single vision model)
+!!! success "✅ Strengths"
+    - Captures overall scene understanding
+    - Good for descriptive questions ("What is happening?")
+    - Natural language context for LLM
+    - Understands mood, atmosphere, context
+    - Computationally lighter (single vision model)
 
-**⚠️ Limitations:**
-- Misses objects not mentioned in caption
-- Poor for counting tasks ("How many X?")
-- Limited spatial information
-- May miss small or background objects
-- Caption quality depends on BLIP's focus
+!!! warning "⚠️ Limitations"
+    - Misses objects not mentioned in caption
+    - Poor for counting tasks ("How many X?")
+    - Limited spatial information
+    - May miss small or background objects
+    - Caption quality depends on BLIP's focus
 
-**Best For:**
-- Scene-level questions
-- Qualitative assessments
-- Questions about actions or relationships
-- General image understanding
+!!! tip "Best For"
+    - Scene-level questions
+    - Qualitative assessments
+    - Questions about actions or relationships
+    - General image understanding
 
 ---
 
 #### Pipeline B: YOLO + LLM
 
-**✅ Strengths:**
-- Excellent for object presence ("Is there a X?")
-- Accurate counting ("How many X?")
-- Provides spatial locations (bounding boxes)
-- Detects all objects in frame
-- Precise object identification
+!!! success "✅ Strengths"
+    - Excellent for object presence ("Is there a X?")
+    - Accurate counting ("How many X?")
+    - Provides spatial locations (bounding boxes)
+    - Detects all objects in frame
+    - Precise object identification
 
-**⚠️ Limitations:**
-- No overall scene context
-- Limited to 80 COCO classes
-- Poor for abstract questions (mood, style, color nuances)
-- Doesn't capture relationships between objects
-- Miss actions or events happening
+!!! warning "⚠️ Limitations"
+    - No overall scene context
+    - Limited to 80 COCO classes
+    - Poor for abstract questions (mood, style, color nuances)
+    - Doesn't capture relationships between objects
+    - Miss actions or events happening
 
-**Best For:**
-- Object-centric questions
-- Counting queries
-- Spatial reasoning
-- Presence/absence questions
+!!! tip "Best For"
+    - Object-centric questions
+    - Counting queries
+    - Spatial reasoning
+    - Presence/absence questions
 
 ---
 
 #### Pipeline C: BLIP + YOLO + LLM (Hybrid)
 
-**✅ Strengths:**
-- Comprehensive image understanding (global + local)
-- Handles diverse question types
-- Best accuracy across most configurations
-- Combines caption context with object details
-- Provides both "what's happening" and "what objects exist"
+!!! success "✅ Strengths"
+    - Comprehensive image understanding (global + local)
+    - Handles diverse question types
+    - Best accuracy across most configurations
+    - Combines caption context with object details
+    - Provides both "what's happening" and "what objects exist"
 
-**⚠️ Limitations:**
-- Higher computational cost (2 vision models)
-- Longer prompts (more context tokens)
-- Potential information redundancy
-- Requires careful prompt engineering to balance both sources
+!!! warning "⚠️ Limitations"
+    - Higher computational cost (2 vision models)
+    - Longer prompts (more context tokens)
+    - Potential information redundancy
+    - Requires careful prompt engineering to balance both sources
 
-**Best For:**
-- Complex questions requiring multiple reasoning types
-- When computational cost is acceptable
-- Production systems requiring robustness
-- Diverse question distributions
+!!! tip "Best For"
+    - Complex questions requiring multiple reasoning types
+    - When computational cost is acceptable
+    - Production systems requiring robustness
+    - Diverse question distributions
 
 ---
 
@@ -137,34 +139,40 @@ Pipeline C: BLIP + YOLO + LLM (Hybrid)
 
 Each pipeline explores different hypothesis about what visual information is most useful for VQA:
 
-1. **BLIP (Caption-based):**
-   - *Hypothesis:* Natural language descriptions provide intuitive context
-   - *Result:* Good for scene understanding, misses object details
+**1. BLIP (Caption-based):**
 
-2. **YOLO (Detection-based):**
-   - *Hypothesis:* Object lists with locations suffice for most questions
-   - *Result:* Excellent for object queries, poor for context
+- *Hypothesis:* Natural language descriptions provide intuitive context
+- *Result:* Good for scene understanding, misses object details
 
-3. **BLIP + YOLO (Hybrid):**
-   - *Hypothesis:* Combining both modalities covers more question types
-   - *Result:* Best overall, slight overhead acceptable
+**2. YOLO (Detection-based):**
+
+- *Hypothesis:* Object lists with locations suffice for most questions
+- *Result:* Excellent for object queries, poor for context
+
+**3. BLIP + YOLO (Hybrid):**
+
+- *Hypothesis:* Combining both modalities covers more question types
+- *Result:* Best overall, slight overhead acceptable
 
 ### Key Insights
 
-1. **Complementary Information:**
-   - BLIP provides "story" (what's happening)
-   - YOLO provides "inventory" (what's present)
-   - Together: comprehensive understanding
+**1. Complementary Information:**
 
-2. **Model Choice Matters:**
-   - Llama-2 better for BLIP/YOLO individual pipelines
-   - Mistral better for hybrid BLIP+YOLO pipeline
-   - Different models process context differently
+- BLIP provides "story" (what's happening)
+- YOLO provides "inventory" (what's present)
+- Together: comprehensive understanding
 
-3. **Prompt Engineering Critical:**
-   - Template structure significantly impacts accuracy (11% vs 51%)
-   - Single-word instruction essential
-   - Model attribution helps (mentioning "BLIP model", "YOLO")
+**2. Model Choice Matters:**
+
+- Llama-2 better for BLIP/YOLO individual pipelines
+- Mistral better for hybrid BLIP+YOLO pipeline
+- Different models process context differently
+
+**3. Prompt Engineering Critical:**
+
+- Template structure significantly impacts accuracy (11% vs 51%)
+- Single-word instruction essential
+- Model attribution helps (mentioning "BLIP model", "YOLO")
 
 ---
 
@@ -200,25 +208,29 @@ Start: What type of questions am I answering?
 
 All pipelines share:
 
-1. **Preprocessing:**
-   - Load VQA dataset
-   - Sample question-answer pairs
-   - Extract image IDs
+**1. Preprocessing:**
 
-2. **Vision Processing (Cached):**
-   - Run vision models once
-   - Store results in CSV
-   - Reuse for multiple LLM experiments
+- Load VQA dataset
+- Sample question-answer pairs
+- Extract image IDs
 
-3. **LLM Inference:**
-   - Load Llama-2 or Mistral
-   - Apply prompt template
-   - Generate answer (max 3 tokens)
+**2. Vision Processing (Cached):**
 
-4. **Evaluation:**
-   - Exact match accuracy
-   - Semantic match accuracy
-   - Compare against ground truth
+- Run vision models once
+- Store results in CSV
+- Reuse for multiple LLM experiments
+
+**3. LLM Inference:**
+
+- Load Llama-2 or Mistral
+- Apply prompt template
+- Generate answer (max 3 tokens)
+
+**4. Evaluation:**
+
+- Exact match accuracy
+- Semantic match accuracy
+- Compare against ground truth
 
 ### Differences
 
@@ -241,7 +253,8 @@ Explore detailed architecture and implementation for each pipeline:
 - **[YOLO + LLM Pipeline](yolo-llm-pipeline.md)** - Object detection approach
 - **[BLIP + YOLO + LLM Pipeline](blip-yolo-llm-pipeline.md)** - Hybrid approach
 
-Each page includes:
+**Each page includes:**
+
 - Detailed architecture diagrams
 - Data flow visualization
 - Code implementation

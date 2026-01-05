@@ -90,17 +90,16 @@ plugins:
 # Page tree
 nav:
   - Home: index.md
-  - Pipelines:
-    - Overview: pipelines.md
-    - BLIP + LLM: blip-llm-pipeline.md
-    - YOLO + LLM: yolo-llm-pipeline.md
-    - BLIP + YOLO + LLM: blip-yolo-llm-pipeline.md
+  - Pipelines: pipelines.md
+  - BLIP + LLM: blip-llm-pipeline.md
+  - YOLO + LLM: yolo-llm-pipeline.md
+  - BLIP + YOLO + LLM: blip-yolo-llm-pipeline.md
   - Experiments:
     - Generation Configuration: generation-config.md
     - Prompt Templates: prompt-templates.md
     - In-Context Learning: in-context-learning.md
   - Results & Analysis: results.md
-  - Getting Started: getting-started.md
+  - Development Guide: getting-started.md
 
 # Extra
 extra:

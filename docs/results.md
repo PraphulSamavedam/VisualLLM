@@ -619,3 +619,18 @@ This comprehensive analysis demonstrates that generic vision-language pipelines 
 5. Llama-2 over Mistral (8.4% advantage)
 
 While the performance gap with specialized models remains significant, the generic approach offers valuable advantages in deployment speed, flexibility, and computational efficiency for scenarios where fine-tuning is impractical.
+
+---
+
+## Navigation
+
+**← [Back to Home](index.md)**
+
+### Explore More
+
+- [Pipeline Overview](pipelines.md) - Compare all three architectures
+- [BLIP + LLM](blip-llm-pipeline.md) | [YOLO + LLM](yolo-llm-pipeline.md) | [BLIP + YOLO + LLM](blip-yolo-llm-pipeline.md)
+- [Generation Config](generation-config.md) - Configuration optimization
+- [Prompt Templates](prompt-templates.md) - Template engineering
+- [In-Context Learning](in-context-learning.md) - Few-shot experiments
+- [Development Guide](getting-started.md) - Setup and usage

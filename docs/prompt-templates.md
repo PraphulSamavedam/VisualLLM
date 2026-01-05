@@ -224,29 +224,48 @@ Effective prompt templates for VQA must balance several key factors:
 
 ### Complete Results Table
 
-**BLIP + YOLO + Llama:**
+#### BLIP + YOLO + Llama-2
 
-| Template | Quantized Exact Match | Unquantized Exact Match | Quantized Semantic | Unquantized Semantic |
-|:--------:|:---------------------:|:-----------------------:|:------------------:|:--------------------:|
-| 1 | 0.43 | 0.43 | 0.57 | 0.58 |
-| 2 | 0.30 | 0.30 | 0.41 | 0.39 |
-| 3 | 0.26 | 0.24 | 0.35 | 0.35 |
-| 4 | 0.39 | 0.39 | 0.52 | 0.52 |
-| 5 | 0.33 | 0.33 | 0.43 | 0.43 |
-| 6 | 0.41 | 0.41 | 0.52 | 0.53 |
-| 7 | 0.11 | 0.11 | 0.17 | 0.18 |
+| Template | Exact Match | Semantic Match | Performance |
+|:--------:|------------:|---------------:|-------------|
+| **1** ⭐ | **43.0%** | **58.0%** | 🏆 Best - Context-first |
+| 6 | 41.0% | 53.0% | ✅ Second-best |
+| 4 | 39.0% | 52.0% | ✅ Solid baseline |
+| 5 | 33.0% | 43.0% | ⚠️ Below average |
+| 2 | 30.0% | 39.0% | ⚠️ Poor |
+| 3 | 24.0% | 35.0% | ❌ Avoid |
+| 7 | 11.0% | 18.0% | ❌ Catastrophic |
 
-**BLIP + YOLO + Mistral:**
+**Best Configuration:** Template 1 with 58% semantic accuracy
 
-| Template | Quantized Exact Match | Unquantized Exact Match | Quantized Semantic | Unquantized Semantic |
-|:--------:|:---------------------:|:-----------------------:|:------------------:|:--------------------:|
-| 1 | 0.476 | 0.476 | 0.491 | 0.491 |
-| 2 | 0.483 | 0.484 | 0.501 | 0.102 |
-| 3 | 0.478 | 0.479 | 0.492 | 0.493 |
-| 4 | 0.472 | 0.473 | 0.488 | 0.488 |
-| 5 | 0.484 | 0.486 | 0.498 | 0.501 |
-| 6 | 0.472 | 0.473 | 0.488 | 0.489 |
-| 7 | 0.516 | 0.519 | 0.549 | 0.551 |
+---
+
+#### BLIP + YOLO + Mistral-7B
+
+| Template | Exact Match | Semantic Match | Performance |
+|:--------:|------------:|---------------:|-------------|
+| **7** ⭐ | **51.9%** | **55.1%** | 🏆 Best - Question-first |
+| 2 | 48.4% | 50.1% | ✅ Second-best |
+| 5 | 48.6% | 50.1% | ✅ Consistent |
+| 1 | 47.6% | 49.1% | ✅ Good |
+| 3 | 47.9% | 49.3% | ✅ Good |
+| 4 | 47.3% | 48.8% | ⚠️ Lower |
+| 6 | 47.3% | 48.9% | ⚠️ Lower |
+
+**Best Configuration:** Template 7 with 55.1% semantic accuracy
+
+---
+
+### Cross-Model Comparison
+
+| Model | Best Template | Semantic Accuracy | Worst Template | Gap |
+|-------|:-------------:|-----------------:|:--------------:|----:|
+| **Llama-2** | Template 1 | **58.0%** ⭐ | Template 7 | 40.0% |
+| **Mistral** | Template 7 | **55.1%** | Template 6 | 6.2% |
+
+**Key Insight:** Template 7 shows **86% performance gap** between models:
+- Mistral: 55.1% (best) 🏆
+- Llama-2: 18.0% (worst) ❌
 
 ### Key Insights
 
@@ -458,3 +477,20 @@ For production systems:
 - **Use Template 7 for Mistral** (0.551 semantic accuracy)
 - **Always test templates** before deployment
 - **Quantization is safe** (minimal impact on template performance)
+
+---
+
+## Navigation
+
+**← [Back to Home](index.md)**
+
+### Related Experiments
+
+- [Generation Configuration](generation-config.md) - Token limits and configuration
+- [In-Context Learning](in-context-learning.md) - Few-shot learning experiments
+- [Results & Analysis](results.md) - Comprehensive performance analysis
+
+### Pipeline Pages
+
+- [Pipeline Overview](pipelines.md) - Compare all three architectures
+- [BLIP + LLM](blip-llm-pipeline.md) | [YOLO + LLM](yolo-llm-pipeline.md) | [BLIP + YOLO + LLM](blip-yolo-llm-pipeline.md)

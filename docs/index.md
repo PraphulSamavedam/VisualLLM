@@ -1,9 +1,23 @@
 # VisualLLM - Visual Question Answering
 
-This repository explores **Visual Question Answering (VQA)** using Large Language Models without explicit fine-tuning. The project investigates how different pipeline configurations combining vision models (BLIP, YOLO) with LLMs (Llama-2, Mistral) perform on VQA tasks through prompt engineering and in-context learning.
+This repository explores **Visual Question Answering (VQA)** using Large Language Models without explicit fine-tuning. The project investigates how different pipeline configurations combining vision models (BLIP, YOLO) with LLMs (Llama-2, Mistral) perform on VQA tasks through prompt engineering and in-context learning.This will be helpful for **improving image search and recommendation systems.**
 
-**Institution:** Northeastern University
-**Focus Areas:** Visual Question Answering, Multi-modal AI, Prompt Engineering, In-Context Learning
+**Institution:** Northeastern University    
+**Focus Areas:** Visual Question Answering, Multi-modal AI, Prompt Engineering, In-Context Learning    
+
+---
+
+## Research Context
+
+This project was developed as part of coursework exploring modern approaches to multi-modal AI. The work demonstrates:
+
+✅ **Zero-shot VQA** - Answer visual questions without task-specific training    
+✅ **Pipeline modularity** - Mix and match vision + language components    
+✅ **Prompt engineering** - Optimize LLM performance through careful prompting    
+✅ **In-context learning** - Leverage few-shot examples for improved accuracy    
+✅ **Comparative analysis** - Systematic evaluation of different approaches    
+
+---
 
 ## What is Visual Question Answering?
 
@@ -13,52 +27,84 @@ Visual Question Answering (VQA) is the challenging task of answering natural lan
 
 | Question | Image | Answer |
 |----------|-------|--------|
-| How many children are in bed? | ![Children in bed] | 2 |
-| Who is wearing glasses? | ![People with glasses] | Man |
-| Is the umbrella upside down? | ![Upside down umbrella] | Yes |
+| How many children are in bed? | ![Children in bed](images/Screenshot_16-4-2024_161553_visualqa.org.jpeg){ width="200" } | 2 |
+| Who is wearing glasses? | ![People with glasses](images/Screenshot_16-4-2024_161758_visualqa.org.jpeg){ width="200" } | Man |
+| Is the umbrella upside down? | ![Upside down umbrella](images/Screenshot_16-4-2024_16172_visualqa.org.jpeg){ width="200" } | Yes |
 
 This is particularly significant for making LLMs truly multi-modal and enabling them to process and reason about visual information.
 
----
-
 ## Project Overview
 
-This research project has **two main aspects**:
+This research project has main aspects of pipeline performance exploration for the task of VQA which can be used to improve image search and recommendation systems.
 
-### 1. Pipeline Performance Exploration
+### Pipeline Performance Exploration
 Investigate different combinations of vision models and LLMs without fine-tuning:
 - **Vision Models:** BLIP (image captioning), YOLO (object detection)
 - **Language Models:** Llama-2-7B, Mistral-7B
 - **Configurations:** BLIP+LLM, YOLO+LLM, BLIP+YOLO+LLM
 
-### 2. Search System Enhancement
-Use the best-performing pipeline to improve image search and recommendation systems.
-
 ---
 
 ## Key Findings
 
-### Best Configuration
-**BLIP + YOLO + Mistral** achieves the highest performance:
-- **Exact Match Accuracy:** 51.9%
-- **Semantic Match Accuracy:** 55.1%
-- **Optimal Settings:** Max 3 tokens, single-word prompt instruction
+### Best Configuration Performance
+
+| Pipeline | LLM | Exact Match | Semantic Match | Notes |
+|----------|-----|-------------|----------------|-------|
+| **BLIP + YOLO** | **Mistral** | **51.9%** ⭐ | **55.1%** | Best overall configuration |
+| BLIP + YOLO | Llama-2 | 46.1% | **64.2%** ⭐ | Highest semantic accuracy |
+| YOLO Only | Llama-2 | 47.1% | 63.0% | Best for object questions |
+| BLIP Only | Llama-2 | 45.4% | 59.3% | Good for scene understanding |
+
+**Optimal Settings:** Max 3 tokens + single-word prompt instruction
+
+---
+
+### Configuration Impact
+
+| Configuration | Exact Match | Semantic Match | Improvement |
+|---------------|-------------|----------------|-------------|
+| Default (20 tokens) | 12.9% | 15.2% | Baseline |
+| Max 3 tokens | 21.6% | 25.8% | +67% |
+| **Max 3 tokens + single word prompt** | **42.9%** | **52.1%** | **+233%** ⭐ |
+
+**Key Insight:** Proper generation configuration increases accuracy by **4×**
+
+---
+
+### In-Context Learning Results
+
+| ICL Examples | Exact Match | Semantic Match | Performance |
+|--------------|-------------|----------------|-------------|
+| **1-shot** | **48%** | **59%** | ⭐ Best |
+| 3-shot | 43-44% | 51-54% | Slight decrease |
+| 5-shot | 14-24% | 18-29% | Significant drop |
+
+**Key Insight:** More examples ≠ better performance (context relevance matters more than quantity)
+
+---
 
 ### Model Comparison
-- **Llama-2** performs better in most pipeline configurations
-- **Mistral** excels specifically in the BLIP+YOLO+LLM pipeline
-- Quantization has minimal impact on accuracy
 
-### In-Context Learning
-- **1-shot:** Best performance (48% exact, 59% semantic)
-- **3-shot:** Slight degradation (43-44% exact, 51-54% semantic)
-- **5-shot:** Significant drop (14-24% exact, 18-29% semantic)
-- **Insight:** More examples ≠ better (context relevance matters)
+| Comparison | Llama-2 | Mistral | Winner |
+|------------|---------|---------|--------|
+| BLIP pipeline | 45.4% / 59.3% | 42.9% / 52.1% | Llama-2 |
+| YOLO pipeline | 47.1% / 63.0% | 29.2% / 39.6% | Llama-2 |
+| **BLIP + YOLO pipeline** | 46.1% / 64.2% | **51.9% / 55.1%** | **Mistral** ⭐ |
+
+**Key Insight:** Model performance is pipeline-dependent; Mistral excels in hybrid configurations
+
+---
 
 ### Baseline Comparison
-**BLIP-VQA** (fine-tuned model): 90.5% exact, 96.1% semantic
 
-**Gap:** Generic pipelines achieve ~50% of fine-tuned performance without training
+| Model Type | Exact Match | Semantic Match | Training Required |
+|------------|-------------|----------------|-------------------|
+| **BLIP-VQA** (fine-tuned) | **90.5%** | **96.1%** | Yes (supervised) |
+| Our Best (BLIP+YOLO+Mistral) | 51.9% | 55.1% | No (zero-shot) |
+| **Performance Gap** | **38.6%** | **41.0%** | Trade-off |
+
+**Key Insight:** Generic pipelines achieve ~50-57% of fine-tuned performance without any task-specific training
 
 ---
 
@@ -77,38 +123,53 @@ Use the best-performing pipeline to improve image search and recommendation syst
 
 ## Quick Navigation
 
-### [Pipeline Exploration](pipelines.md)
-Comparison of different vision model + LLM combinations.
+### 🏗️ Pipeline Architectures
 
-**Key Topics:** BLIP+LLM, YOLO+LLM, BLIP+YOLO+LLM, performance analysis
+**[Pipeline Overview](pipelines.md)** - Comparison of three distinct pipeline configurations
 
----
+- **[BLIP + LLM Pipeline](blip-llm-pipeline.md)** - Caption-based approach for scene understanding
+- **[YOLO + LLM Pipeline](yolo-llm-pipeline.md)** - Object detection approach for counting and identification
+- **[BLIP + YOLO + LLM Pipeline](blip-yolo-llm-pipeline.md)** - Hybrid approach combining both modalities
 
-### [Prompt Templates](prompt-templates.md)
-Investigation of 7 different prompt templates and their impact on accuracy.
-
-**Key Topics:** Template design, instruction clarity, output formatting
+**Key Topics:** Architecture comparison, data flow, strengths & weaknesses, use case recommendations
 
 ---
 
-### [In-Context Learning](in-context-learning.md)
-Analysis of few-shot learning with 1, 3, and 5 example demonstrations.
+### 🧪 Experiments
 
-**Key Topics:** ICL effectiveness, example selection, context limitations
+**[Generation Configuration](generation-config.md)** - Impact of token limits and prompt instructions
+
+- Max tokens optimization (20 → 3 tokens)
+- Single-word instruction effectiveness
+- 4x accuracy improvement through configuration
+
+**[Prompt Templates](prompt-templates.md)** - Investigation of 7 different prompt templates
+
+- Template design principles
+- Model-aware vs. model-agnostic prompts
+- Impact on accuracy (11% to 51.9% variation)
+
+**[In-Context Learning](in-context-learning.md)** - Few-shot learning with 1, 3, and 5 examples
+
+- Optimal example count (1-shot best)
+- Context relevance vs. quantity
+- Performance degradation with too many examples
+
+**Key Topics:** Experimental methodology, optimization strategies, configuration impact
 
 ---
 
-### [Results & Analysis](results.md)
+### 📊 [Results & Analysis](results.md)
 Comprehensive experimental results with accuracy metrics and insights.
 
-**Key Topics:** Performance tables, error analysis, model comparison
+**Key Topics:** Performance tables, error analysis, model comparison, best configurations
 
 ---
 
-### [Getting Started](getting-started.md)
+### 🚀 [Development Guide](getting-started.md)
 Setup instructions, usage examples, and code walkthrough.
 
-**Key Topics:** Installation, running experiments, reproducing results
+**Key Topics:** Installation, running experiments, reproducing results, dataset preparation
 
 ---
 
@@ -177,22 +238,10 @@ For detailed setup and usage, see [Getting Started](getting-started.md).
 
 ---
 
-## Research Context
-
-This project was developed as part of coursework exploring modern approaches to multi-modal AI. The work demonstrates:
-
-✅ **Zero-shot VQA** - Answer visual questions without task-specific training
-✅ **Pipeline modularity** - Mix and match vision + language components
-✅ **Prompt engineering** - Optimize LLM performance through careful prompting
-✅ **In-context learning** - Leverage few-shot examples for improved accuracy
-✅ **Comparative analysis** - Systematic evaluation of different approaches
-
----
-
 ## Contact
 
-**Author:** Praphul Samavedam
-**GitHub:** [@PraphulSamavedam](https://github.com/PraphulSamavedam)
+**Author:** Praphul Samavedam    
+**GitHub:** [@PraphulSamavedam](https://github.com/PraphulSamavedam)    
 
 ---
 

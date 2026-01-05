@@ -945,3 +945,16 @@ If you use this code in your research, please cite:
   url={https://github.com/yourusername/VisualLLM}
 }
 ```
+
+---
+
+## Navigation
+
+**← [Back to Home](index.md)**
+
+### Documentation
+
+- [Pipeline Overview](pipelines.md) - Architecture comparison
+- [BLIP + LLM](blip-llm-pipeline.md) | [YOLO + LLM](yolo-llm-pipeline.md) | [BLIP + YOLO + LLM](blip-yolo-llm-pipeline.md)
+- [Experiments](generation-config.md) - Configuration and optimization
+- [Results & Analysis](results.md) - Performance evaluation

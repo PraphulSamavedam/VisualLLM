@@ -534,3 +534,20 @@ The primary issue appears to be **random example selection**, which introduces i
 4. **Dynamic example count adaptation**
 
 For production deployments, **zero-shot inference** remains the most reliable approach, with optional **1-shot ICL using Template 6** for marginal improvements in specific scenarios.
+
+---
+
+## Navigation
+
+**← [Back to Home](index.md)**
+
+### Related Experiments
+
+- [Generation Configuration](generation-config.md) - Token limits and configuration
+- [Prompt Templates](prompt-templates.md) - Template engineering and optimization
+- [Results & Analysis](results.md) - Comprehensive performance analysis
+
+### Pipeline Pages
+
+- [Pipeline Overview](pipelines.md) - Compare all three architectures
+- [BLIP + LLM](blip-llm-pipeline.md) | [YOLO + LLM](yolo-llm-pipeline.md) | [BLIP + YOLO + LLM](blip-yolo-llm-pipeline.md)

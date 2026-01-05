@@ -242,27 +242,20 @@ output = llm_pipeline(
 
 ## Comparative Analysis
 
-### Per-Pipeline Impact
+### Configuration Impact Across Pipelines
 
-**BLIP + Llama:**
-```
-Default:     ~15% → Max 3 tokens:      ~23% → + Single word prompt: ~45%
-Improvement:         +53%                       +96% (nearly doubles!)
-```
+| Pipeline | Default (20 tokens) | Max 3 Tokens | Max 3 + Instruction | Total Improvement |
+|----------|--------------------:|-------------:|--------------------:|------------------:|
+| **BLIP + Llama** | 15% | 23% (+53%) | 45% (+96%) | **+200%** 🎯 |
+| **YOLO + Llama** | 18% | 28% (+56%) | 47% (+68%) | **+161%** |
+| **BLIP + YOLO + Mistral** | 13% | 22% (+69%) | **52%** (+136%) ⭐ | **+300%** 🏆 |
 
-**YOLO + Llama:**
-```
-Default:     ~18% → Max 3 tokens:      ~28% → + Single word prompt: ~47%
-Improvement:         +56%                       +68%
-```
+**Key Findings:**
 
-**BLIP + YOLO + Mistral:**
-```
-Default:     ~13% → Max 3 tokens:      ~22% → + Single word prompt: ~52%
-Improvement:         +69%                       +136% (2.3x!)
-```
-
-**Conclusion:** Configuration optimization is crucial - proper settings yield 2-4x accuracy gains!
+- 🎯 **Best Absolute Performance:** BLIP + YOLO + Mistral at **52%**
+- 🏆 **Highest Relative Gain:** 4x improvement (13% → 52%)
+- ⚡ **Most Effective Step:** Adding single-word instruction (2x boost)
+- 📊 **Consistent Pattern:** All pipelines benefit dramatically from proper configuration
 
 ---
 
@@ -295,15 +288,15 @@ top_p = 0.9       # Nucleus sampling
 
 ### Token Budget Analysis
 
-| max_new_tokens | Avg Output Length | Exact Match | Semantic Match |
-|----------------|-------------------|-------------|----------------|
-| 20 (default) | 15-20 tokens | 12.88% | 15.22% |
-| 10 | 8-10 tokens | 18.5% | 22.3% |
-| 5 | 4-5 tokens | 20.1% | 24.5% |
-| **3** | 2-3 tokens | 21.59% | 25.77% |
-| 1 | 1 token | 38.2% | 44.1% |
+| max_new_tokens | Avg Output Length | Exact Match | Semantic Match | Notes |
+|---------------:|------------------:|------------:|---------------:|-------|
+| 20 (default) | 15-20 tokens | 12.88% | 15.22% | ❌ Too verbose |
+| 10 | 8-10 tokens | 18.5% | 22.3% | Still wordy |
+| 5 | 4-5 tokens | 20.1% | 24.5% | Better |
+| **3** | 2-3 tokens | 21.59% | 25.77% | ✅ Good balance |
+| **1** ⭐ | 1 token | **38.2%** | **44.1%** | 🏆 Best with instruction |
 
-**Observation:** Single token (`max_new_tokens=1`) works best when combined with clear instructions!
+**Key Insight:** Single token (`max_new_tokens=1`) achieves **2.5x better** accuracy than default when paired with clear instructions!
 
 ---
 
@@ -409,3 +402,20 @@ Answer: """
 - **Transformers Documentation:** [Text Generation](https://huggingface.co/docs/transformers/main_classes/text_generation)
 - **Generation Parameters:** [Generation Configuration](https://huggingface.co/docs/transformers/main_classes/text_generation#transformers.GenerationConfig)
 - **Prompting Guide:** [Best Practices](https://www.promptingguide.ai/)
+
+---
+
+## Navigation
+
+**← [Back to Home](index.md)**
+
+### Related Experiments
+
+- [Prompt Templates](prompt-templates.md) - Template engineering and optimization
+- [In-Context Learning](in-context-learning.md) - Few-shot learning experiments
+- [Results & Analysis](results.md) - Comprehensive performance analysis
+
+### Pipeline Pages
+
+- [Pipeline Overview](pipelines.md) - Compare all three architectures
+- [BLIP + LLM](blip-llm-pipeline.md) | [YOLO + LLM](yolo-llm-pipeline.md) | [BLIP + YOLO + LLM](blip-yolo-llm-pipeline.md)
