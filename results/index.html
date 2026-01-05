@@ -1,0 +1,3143 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Exploring LLM pipelines for Visual Question Answering without explicit fine-tuning">
+      
+      
+        <meta name="author" content="Praphul Samavedam">
+      
+      
+        <link rel="canonical" href="https://PraphulSamavedam.github.io/VisualLLM/results/">
+      
+      
+        <link rel="prev" href="../in-context-learning/">
+      
+      
+        <link rel="next" href="../getting-started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Results & Analysis - VisualLLM - Visual Question Answering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#comprehensive-results-and-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VisualLLM - Visual Question Answering" class="md-header__button md-logo" aria-label="VisualLLM - Visual Question Answering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VisualLLM - Visual Question Answering
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Results & Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2c-1.82 0-3.53.5-5 1.35C8 5.08 10 8.3 10 12s-2 6.92-5 8.65C6.47 21.5 8.18 22 10 22a10 10 0 0 0 10-10A10 10 0 0 0 10 2"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/PraphulSamavedam/VisualLLM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VisualLLM
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../pipelines/" class="md-tabs__link">
+          
+  
+  
+  Pipelines
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../generation-config/" class="md-tabs__link">
+          
+  
+  
+  Experiments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Results & Analysis
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../getting-started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VisualLLM - Visual Question Answering" class="md-nav__button md-logo" aria-label="VisualLLM - Visual Question Answering" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VisualLLM - Visual Question Answering
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/PraphulSamavedam/VisualLLM" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    VisualLLM
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pipelines
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Pipelines
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pipelines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blip-llm-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BLIP + LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yolo-llm-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    YOLO + LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blip-yolo-llm-pipeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BLIP + YOLO + LLM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Experiments
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Experiments
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generation-config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Generation Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Templates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../in-context-learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    In-Context Learning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results & Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Results & Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metric-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-generation-configuration-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generation Configuration Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Generation Configuration Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurations-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurations Tested
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pipeline-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pipeline Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pipeline Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-by-question-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis by Question Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prompt-template-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prompt Template Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prompt Template Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-in-context-learning-icl-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. In-Context Learning (ICL) Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. In-Context Learning (ICL) Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-trends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Trends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-zero-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Zero-Shot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-final-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Final Performance Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Final Performance Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Benchmark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-gap-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Gap Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-error-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Error Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Error Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Failure Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-distribution-by-question-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Distribution by Question Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-specific-error-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model-Specific Error Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-findings-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Key Findings Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Key Findings Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-discoveries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Discoveries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Future Work
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Future Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#executive-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Executive Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluation Metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Evaluation Metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#metric-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metric Definitions
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-generation-configuration-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Generation Configuration Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Generation Configuration Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurations-tested" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configurations Tested
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommendation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommendation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-pipeline-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Pipeline Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Pipeline Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline Configurations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Comparison
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysis-by-question-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analysis by Question Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prompt-template-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prompt Template Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prompt Template Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Visualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Characteristics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-in-context-learning-icl-experiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. In-Context Learning (ICL) Experiments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. In-Context Learning (ICL) Experiments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objective_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-results_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Results
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-trends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Trends
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-insights_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-with-zero-shot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison with Zero-Shot
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-final-performance-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Final Performance Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Final Performance Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-benchmark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Benchmark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-gap-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Gap Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-error-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Error Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Error Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Failure Modes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error-distribution-by-question-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Distribution by Question Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-specific-error-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model-Specific Error Patterns
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-key-findings-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Key Findings Summary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Key Findings Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#major-discoveries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Major Discoveries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-recommendations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Recommendations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-future-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Future Work
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Future Work">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#immediate-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Immediate Improvements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#medium-term-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Medium-Term Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#long-term-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Long-Term Vision
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="comprehensive-results-and-analysis">Comprehensive Results and Analysis<a class="headerlink" href="#comprehensive-results-and-analysis" title="Permanent link">&para;</a></h1>
+<h2 id="executive-summary">Executive Summary<a class="headerlink" href="#executive-summary" title="Permanent link">&para;</a></h2>
+<p>This page presents comprehensive experimental results from the VisualLLM project, exploring Visual Question Answering (VQA) using vision models (BLIP, YOLO) combined with Large Language Models (Llama-2, Mistral-7B). Key findings:</p>
+<ul>
+<li><strong>Best Pipeline</strong>: BLIP + YOLO + Llama-2 achieves <strong>64.23% semantic accuracy</strong></li>
+<li><strong>Best Template</strong>: Template 1 for Llama (58%), Template 7 for Mistral (55.1%)</li>
+<li><strong>BLIP-VQA Baseline</strong>: Fine-tuned model achieves <strong>96.11% semantic accuracy</strong></li>
+<li><strong>Performance Gap</strong>: 32% accuracy gap between generic pipeline and specialized model</li>
+<li><strong>ICL Finding</strong>: More examples hurt performance (59% → 29% with 1→5 shots)</li>
+</ul>
+<h2 id="evaluation-metrics">Evaluation Metrics<a class="headerlink" href="#evaluation-metrics" title="Permanent link">&para;</a></h2>
+<h3 id="metric-definitions">Metric Definitions<a class="headerlink" href="#metric-definitions" title="Permanent link">&para;</a></h3>
+<p><strong>1. Exact Match Accuracy</strong>
+- Strict string comparison between generated and ground truth answers
+- Case-sensitive matching
+- Single token evaluation (first generated token)
+- May underestimate performance due to synonyms</p>
+<p><strong>2. Semantic Match Accuracy</strong>
+- Semantic equivalence evaluation
+- Accounts for synonyms (e.g., "2" ≡ "two")
+- More reliable metric for VQA evaluation
+- Used as primary metric throughout analysis</p>
+<p><strong>Note:</strong> All results use single-word answers. First token output is evaluated due to generation configuration (max_new_tokens=3).</p>
+<h2 id="1-generation-configuration-experiments">1. Generation Configuration Experiments<a class="headerlink" href="#1-generation-configuration-experiments" title="Permanent link">&para;</a></h2>
+<h3 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h3>
+<p>Determine optimal generation parameters for single-word VQA answers.</p>
+<h3 id="configurations-tested">Configurations Tested<a class="headerlink" href="#configurations-tested" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Default</strong>: Standard generation (max_new_tokens=20)</li>
+<li><strong>Token-Limited</strong>: Restrict to 3 tokens</li>
+<li><strong>Token + Prompt</strong>: 3 tokens + "single word" instruction</li>
+</ol>
+<h3 id="results">Results<a class="headerlink" href="#results" title="Permanent link">&para;</a></h3>
+<p><strong>Pipeline: YOLO + Mistral-7B-Instruct-v0.2</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Configuration</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: center;">Semantic Match</th>
+<th style="text-align: center;">Improvement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Default</td>
+<td style="text-align: center;">0.1288</td>
+<td style="text-align: center;">0.1522</td>
+<td style="text-align: center;">Baseline</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max 3 tokens</td>
+<td style="text-align: center;">0.2159</td>
+<td style="text-align: center;">0.2577</td>
+<td style="text-align: center;">+69%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Max 3 tokens + single word prompt</td>
+<td style="text-align: center;"><strong>0.4293</strong></td>
+<td style="text-align: center;"><strong>0.5209</strong></td>
+<td style="text-align: center;">+242%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-insights">Key Insights<a class="headerlink" href="#key-insights" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Default Generation Fails</strong>: Only 15.22% semantic accuracy</li>
+<li>Models generate verbose explanations</li>
+<li>Answer buried in generated text</li>
+<li>
+<p>First token often not the answer</p>
+</li>
+<li>
+<p><strong>Token Limiting Helps</strong>: 69% improvement</p>
+</li>
+<li>Forces brevity</li>
+<li>Increases answer probability in first token</li>
+<li>
+<p>Still allows some verbosity</p>
+</li>
+<li>
+<p><strong>Combined Strategy Best</strong>: 242% improvement</p>
+</li>
+<li>Explicit instruction + token limit = optimal</li>
+<li>Prompt engineering crucial for VQA</li>
+<li>Achieves production-viable accuracy</li>
+</ol>
+<h3 id="analysis">Analysis<a class="headerlink" href="#analysis" title="Permanent link">&para;</a></h3>
+<p><strong>Why Default Fails:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Question: &quot;How many dogs?&quot;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Default output: &quot;Based on the detections provided, there are two dogs...&quot;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>First token: &quot;Based&quot; ❌
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Correct answer: &quot;two&quot;
+</code></pre></div></p>
+<p><strong>Why Combined Strategy Works:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Question: &quot;How many dogs?&quot;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Prompt: &quot;...answer in a single word...&quot;
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Config: max_new_tokens=3
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Output: &quot;two&quot;
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>First token: &quot;two&quot; ✓
+</code></pre></div></p>
+<h3 id="recommendation">Recommendation<a class="headerlink" href="#recommendation" title="Permanent link">&para;</a></h3>
+<p><strong>Always use</strong>: max_new_tokens=3 + single-word instruction in prompt</p>
+<hr />
+<h2 id="2-pipeline-comparison">2. Pipeline Comparison<a class="headerlink" href="#2-pipeline-comparison" title="Permanent link">&para;</a></h2>
+<h3 id="objective_1">Objective<a class="headerlink" href="#objective_1" title="Permanent link">&para;</a></h3>
+<p>Compare different vision model combinations with LLMs.</p>
+<h3 id="pipeline-configurations">Pipeline Configurations<a class="headerlink" href="#pipeline-configurations" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>BLIP + LLM</strong>: Image captions only</li>
+<li><strong>YOLO + LLM</strong>: Object detections only</li>
+<li><strong>BLIP + YOLO + LLM</strong>: Combined captions and detections</li>
+</ol>
+<h3 id="results_1">Results<a class="headerlink" href="#results_1" title="Permanent link">&para;</a></h3>
+<p><strong>Generation Config</strong>: Max 3 tokens + single word prompt (best from previous experiment)</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pipeline</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: center;">Semantic Match</th>
+<th style="text-align: center;">Delta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Llama-2-7b-chat-hf</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + Llama</td>
+<td style="text-align: center;">0.4542</td>
+<td style="text-align: center;">0.5927</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">YOLO + Llama</td>
+<td style="text-align: center;">0.4710</td>
+<td style="text-align: center;">0.6300</td>
+<td style="text-align: center;">+6.3%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BLIP + YOLO + Llama</strong></td>
+<td style="text-align: center;"><strong>0.4610</strong></td>
+<td style="text-align: center;"><strong>0.6423</strong></td>
+<td style="text-align: center;">+8.4%</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Mistral-7B-Instruct-v0.2</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + Mistral</td>
+<td style="text-align: center;">0.4293</td>
+<td style="text-align: center;">0.5209</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr>
+<td style="text-align: left;">YOLO + Mistral</td>
+<td style="text-align: center;">0.2923</td>
+<td style="text-align: center;">0.3961</td>
+<td style="text-align: center;">-24%</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>BLIP + YOLO + Mistral</strong></td>
+<td style="text-align: center;"><strong>0.4542</strong></td>
+<td style="text-align: center;"><strong>0.5927</strong></td>
+<td style="text-align: center;">+13.8%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="model-comparison">Model Comparison<a class="headerlink" href="#model-comparison" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pipeline</th>
+<th style="text-align: center;">Llama Semantic</th>
+<th style="text-align: center;">Mistral Semantic</th>
+<th style="text-align: center;">Winner</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">BLIP only</td>
+<td style="text-align: center;">0.5927</td>
+<td style="text-align: center;">0.5209</td>
+<td style="text-align: center;">Llama +13.8%</td>
+</tr>
+<tr>
+<td style="text-align: left;">YOLO only</td>
+<td style="text-align: center;"><strong>0.6300</strong></td>
+<td style="text-align: center;">0.3961</td>
+<td style="text-align: center;">Llama +59.1%</td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + YOLO</td>
+<td style="text-align: center;"><strong>0.6423</strong></td>
+<td style="text-align: center;">0.5927</td>
+<td style="text-align: center;">Llama +8.4%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-insights_1">Key Insights<a class="headerlink" href="#key-insights_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Combined Pipeline Best for Both Models</strong></li>
+<li>BLIP provides semantic context</li>
+<li>YOLO provides object counts and positions</li>
+<li>
+<p>Complementary information improves accuracy</p>
+</li>
+<li>
+<p><strong>Llama Outperforms Mistral</strong></p>
+</li>
+<li>8.4% higher on best pipeline</li>
+<li>Significantly better on YOLO-only (59% advantage)</li>
+<li>
+<p>More robust across pipeline variations</p>
+</li>
+<li>
+<p><strong>YOLO Strong for Llama</strong></p>
+</li>
+<li>Object detections alone: 63% accuracy</li>
+<li>Better than caption-only: +6.3%</li>
+<li>
+<p>Suggests counting/object questions dominate dataset</p>
+</li>
+<li>
+<p><strong>Mistral Needs BLIP</strong></p>
+</li>
+<li>YOLO-only: catastrophic 39.61% accuracy</li>
+<li>Struggles with structured detection data</li>
+<li>Requires semantic captions for context</li>
+</ol>
+<h3 id="analysis-by-question-type">Analysis by Question Type<a class="headerlink" href="#analysis-by-question-type" title="Permanent link">&para;</a></h3>
+<p><strong>Counting Questions</strong> (e.g., "How many X?")
+- YOLO excels: exact object counts
+- BLIP struggles: "several", "many", "a few"
+- Winner: YOLO + LLM</p>
+<p><strong>Identification Questions</strong> (e.g., "What is X?")
+- BLIP excels: semantic descriptions
+- YOLO provides: object labels
+- Winner: BLIP + YOLO + LLM</p>
+<p><strong>Yes/No Questions</strong> (e.g., "Is X doing Y?")
+- BLIP better: contextual understanding
+- YOLO limited: object presence only
+- Winner: BLIP + LLM</p>
+<p><strong>Optimal Strategy</strong>: Use combined pipeline for balanced performance</p>
+<hr />
+<h2 id="3-prompt-template-experiments">3. Prompt Template Experiments<a class="headerlink" href="#3-prompt-template-experiments" title="Permanent link">&para;</a></h2>
+<h3 id="objective_2">Objective<a class="headerlink" href="#objective_2" title="Permanent link">&para;</a></h3>
+<p>Identify optimal prompt templates for each model.</p>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pipeline</strong>: BLIP + YOLO + LLM (best from previous experiment)</li>
+<li><strong>Templates</strong>: 7 different prompt formats</li>
+<li><strong>Models</strong>: Quantized and unquantized versions</li>
+<li><strong>Sample Size</strong>: 1000 instances per template</li>
+</ul>
+<h3 id="complete-results">Complete Results<a class="headerlink" href="#complete-results" title="Permanent link">&para;</a></h3>
+<p><strong>BLIP + YOLO + Llama-2-7b-chat-hf:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Template</th>
+<th style="text-align: center;">Quantized Exact</th>
+<th style="text-align: center;">Unquantized Exact</th>
+<th style="text-align: center;">Quantized Semantic</th>
+<th style="text-align: center;">Unquantized Semantic</th>
+<th style="text-align: center;">Best Semantic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;"><strong>0.58</strong></td>
+<td style="text-align: center;"><strong>0.58</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.41</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.35</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.39</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.52</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">0.33</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.43</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.53</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">0.11</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">0.18</td>
+</tr>
+</tbody>
+</table>
+<p><strong>BLIP + YOLO + Mistral-7B-Instruct-v0.2:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Template</th>
+<th style="text-align: center;">Quantized Exact</th>
+<th style="text-align: center;">Unquantized Exact</th>
+<th style="text-align: center;">Quantized Semantic</th>
+<th style="text-align: center;">Unquantized Semantic</th>
+<th style="text-align: center;">Best Semantic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.476</td>
+<td style="text-align: center;">0.476</td>
+<td style="text-align: center;">0.491</td>
+<td style="text-align: center;">0.491</td>
+<td style="text-align: center;">0.491</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.483</td>
+<td style="text-align: center;">0.484</td>
+<td style="text-align: center;">0.501</td>
+<td style="text-align: center;">0.102</td>
+<td style="text-align: center;">0.501</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.478</td>
+<td style="text-align: center;">0.479</td>
+<td style="text-align: center;">0.492</td>
+<td style="text-align: center;">0.493</td>
+<td style="text-align: center;">0.493</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.472</td>
+<td style="text-align: center;">0.473</td>
+<td style="text-align: center;">0.488</td>
+<td style="text-align: center;">0.488</td>
+<td style="text-align: center;">0.488</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.484</td>
+<td style="text-align: center;">0.486</td>
+<td style="text-align: center;">0.498</td>
+<td style="text-align: center;">0.501</td>
+<td style="text-align: center;">0.501</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.472</td>
+<td style="text-align: center;">0.473</td>
+<td style="text-align: center;">0.488</td>
+<td style="text-align: center;">0.489</td>
+<td style="text-align: center;">0.489</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.516</td>
+<td style="text-align: center;"><strong>0.519</strong></td>
+<td style="text-align: center;">0.549</td>
+<td style="text-align: center;"><strong>0.551</strong></td>
+<td style="text-align: center;"><strong>0.551</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-visualization">Performance Visualization<a class="headerlink" href="#performance-visualization" title="Permanent link">&para;</a></h3>
+<p><strong>Semantic Accuracy Comparison:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Llama-2-7b-chat-hf:
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Template 1: ███████████████████████████████ 0.58
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Template 6: ████████████████████████████    0.53
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Template 4: ███████████████████████████     0.52
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Template 5: ██████████████████████          0.43
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Template 2: █████████████████████           0.41
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>Template 3: ██████████████████              0.35
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>Template 7: █████████                       0.18
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>Mistral-7B-Instruct-v0.2:
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Template 7: ███████████████████████████████ 0.551
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>Template 2: ██████████████████████████████  0.501
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>Template 5: ██████████████████████████████  0.501
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>Template 3: █████████████████████████████   0.493
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>Template 1: █████████████████████████████   0.491
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>Template 6: █████████████████████████████   0.489
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Template 4: █████████████████████████████   0.488
+</code></pre></div>
+<h3 id="key-insights_2">Key Insights<a class="headerlink" href="#key-insights_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Dramatic Model Divergence</strong></li>
+<li>Llama best: Template 1 (0.58)</li>
+<li>Mistral best: Template 7 (0.551)</li>
+<li>
+<p>Same template (7) shows 86% accuracy gap</p>
+</li>
+<li>
+<p><strong>Template Stability</strong></p>
+</li>
+<li>Mistral consistent: 0.488-0.551 (12.9% range)</li>
+<li>Llama variable: 0.18-0.58 (222% range)</li>
+<li>
+<p>Template selection more critical for Llama</p>
+</li>
+<li>
+<p><strong>Quantization Robustness</strong></p>
+</li>
+<li>Minimal difference: &lt;1% across all templates</li>
+<li>BFloat16 quantization safe for production</li>
+<li>
+<p>Memory savings with no accuracy loss</p>
+</li>
+<li>
+<p><strong>Architecture-Specific Preferences</strong></p>
+</li>
+<li><strong>Llama</strong>: Context-first, model-aware format</li>
+<li><strong>Mistral</strong>: Question-first, direct format</li>
+<li>Reflects different training approaches</li>
+</ol>
+<h3 id="template-characteristics">Template Characteristics<a class="headerlink" href="#template-characteristics" title="Permanent link">&para;</a></h3>
+<p><strong>Template 1 (Best for Llama):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>&quot;Based on the image caption(provided by BLIP model) as &#39;{caption}&#39;
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>and detections(provided by Yolo) as {detections}, answer in a single
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>word the question based on the image details as question: &#39;{question}&#39;&quot;
+</code></pre></div>
+- Provides model attribution
+- Context precedes question
+- Structured information flow</p>
+<p><strong>Template 7 (Best for Mistral):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>&quot;Answer in a single word for the question: {question} using image
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>caption: {caption} and object detections: {detections}.&quot;
+</code></pre></div>
+- Question-first format
+- Direct instruction
+- Minimal structure</p>
+<hr />
+<h2 id="4-in-context-learning-icl-experiments">4. In-Context Learning (ICL) Experiments<a class="headerlink" href="#4-in-context-learning-icl-experiments" title="Permanent link">&para;</a></h2>
+<h3 id="objective_3">Objective<a class="headerlink" href="#objective_3" title="Permanent link">&para;</a></h3>
+<p>Evaluate whether few-shot examples improve VQA performance.</p>
+<h3 id="configuration_1">Configuration<a class="headerlink" href="#configuration_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pipeline</strong>: BLIP + YOLO + Llama-2-7b-chat-hf</li>
+<li><strong>ICL Shots</strong>: 1, 3, 5 examples</li>
+<li><strong>Templates</strong>: All 7 formats</li>
+<li><strong>Sample Size</strong>: 100 instances (computational constraints)</li>
+<li><strong>Selection</strong>: Random examples (excluding test set)</li>
+</ul>
+<h3 id="complete-results_1">Complete Results<a class="headerlink" href="#complete-results_1" title="Permanent link">&para;</a></h3>
+<p><strong>BLIP + YOLO + Llama-2 with ICL:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">ICL</th>
+<th style="text-align: center;">Metric</th>
+<th style="text-align: center;">T1</th>
+<th style="text-align: center;">T2</th>
+<th style="text-align: center;">T3</th>
+<th style="text-align: center;">T4</th>
+<th style="text-align: center;">T5</th>
+<th style="text-align: center;">T6</th>
+<th style="text-align: center;">T7</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>1</strong></td>
+<td style="text-align: center;">Exact</td>
+<td style="text-align: center;">0.46</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.46</td>
+<td style="text-align: center;"><strong>0.48</strong></td>
+<td style="text-align: center;">0.37</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Semantic</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;"><strong>0.59</strong></td>
+<td style="text-align: center;">0.50</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>3</strong></td>
+<td style="text-align: center;">Exact</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">0.35</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">0.43</td>
+<td style="text-align: center;">0.23</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Semantic</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.54</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">0.34</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">Exact</td>
+<td style="text-align: center;">0.17</td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">0.14</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">0.16</td>
+<td style="text-align: center;">0.15</td>
+<td style="text-align: center;"><strong>0.24</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">Semantic</td>
+<td style="text-align: center;">0.23</td>
+<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;"><strong>0.29</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-trends">Performance Trends<a class="headerlink" href="#performance-trends" title="Permanent link">&para;</a></h3>
+<p><strong>Semantic Accuracy by ICL Count:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Template</th>
+<th style="text-align: center;">1-Shot</th>
+<th style="text-align: center;">3-Shot</th>
+<th style="text-align: center;">5-Shot</th>
+<th style="text-align: center;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">0.53</td>
+<td style="text-align: center;">0.23</td>
+<td style="text-align: center;">-60%</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">0.26</td>
+<td style="text-align: center;">-55%</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.19</td>
+<td style="text-align: center;">-63%</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">0.54</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">-57%</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0.57</td>
+<td style="text-align: center;">0.41</td>
+<td style="text-align: center;">0.18</td>
+<td style="text-align: center;">-68%</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: center;">0.51</td>
+<td style="text-align: center;">0.22</td>
+<td style="text-align: center;">-63%</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">0.34</td>
+<td style="text-align: center;">0.29</td>
+<td style="text-align: center;">-42%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="key-insights_3">Key Insights<a class="headerlink" href="#key-insights_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>ICL Hurts Performance</strong></li>
+<li>Consistent degradation: 1 → 3 → 5 shots</li>
+<li>Average drop: 60% (1-shot to 5-shot)</li>
+<li>
+<p>Only Template 7 shows resilience</p>
+</li>
+<li>
+<p><strong>1-Shot Competitive</strong></p>
+</li>
+<li>Template 6: 0.59 (competitive with zero-shot 0.64)</li>
+<li>Minimal overhead</li>
+<li>
+<p>May be viable with better selection</p>
+</li>
+<li>
+<p><strong>Random Selection Problem</strong></p>
+</li>
+<li>Irrelevant examples confuse model</li>
+<li>No semantic similarity matching</li>
+<li>
+<p>Need intelligent example selection</p>
+</li>
+<li>
+<p><strong>Template 7 Exception</strong></p>
+</li>
+<li>Best at 5-shot (0.29)</li>
+<li>Worst zero-shot template benefits from examples</li>
+<li>Question-first format needs demonstration</li>
+</ol>
+<h3 id="comparison-with-zero-shot">Comparison with Zero-Shot<a class="headerlink" href="#comparison-with-zero-shot" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Configuration</th>
+<th style="text-align: center;">Exact</th>
+<th style="text-align: center;">Semantic</th>
+<th style="text-align: center;">Samples</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Zero-shot</td>
+<td style="text-align: center;">0.461</td>
+<td style="text-align: center;"><strong>0.6423</strong></td>
+<td style="text-align: center;">1000</td>
+<td style="text-align: left;">Best overall</td>
+</tr>
+<tr>
+<td style="text-align: left;">1-shot (T6)</td>
+<td style="text-align: center;">0.48</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Competitive</td>
+</tr>
+<tr>
+<td style="text-align: left;">3-shot (T4)</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">0.54</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">16% drop</td>
+</tr>
+<tr>
+<td style="text-align: left;">5-shot (T7)</td>
+<td style="text-align: center;">0.24</td>
+<td style="text-align: center;">0.29</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">55% drop</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusion</strong>: Zero-shot inference remains optimal for this pipeline.</p>
+<hr />
+<h2 id="5-final-performance-comparison">5. Final Performance Comparison<a class="headerlink" href="#5-final-performance-comparison" title="Permanent link">&para;</a></h2>
+<h3 id="comprehensive-benchmark">Comprehensive Benchmark<a class="headerlink" href="#comprehensive-benchmark" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pipeline</th>
+<th style="text-align: center;">Exact Match</th>
+<th style="text-align: center;">Semantic Match</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Fine-tuned Baseline</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP-VQA</td>
+<td style="text-align: center;"><strong>0.9053</strong></td>
+<td style="text-align: center;"><strong>0.9611</strong></td>
+<td style="text-align: left;">Specialized model</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Generic Pipelines (Zero-shot)</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + YOLO + Llama-2</td>
+<td style="text-align: center;">0.461</td>
+<td style="text-align: center;">0.6423</td>
+<td style="text-align: left;">Best generic</td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + YOLO + Mistral</td>
+<td style="text-align: center;">0.519</td>
+<td style="text-align: center;">0.551</td>
+<td style="text-align: left;">Best Mistral</td>
+</tr>
+<tr>
+<td style="text-align: left;">YOLO + Llama-2</td>
+<td style="text-align: center;">0.471</td>
+<td style="text-align: center;">0.630</td>
+<td style="text-align: left;">Object-focused</td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + Llama-2</td>
+<td style="text-align: center;">0.4542</td>
+<td style="text-align: center;">0.5927</td>
+<td style="text-align: left;">Caption-focused</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>With In-Context Learning</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">BLIP + YOLO + Llama + 1 ICL</td>
+<td style="text-align: center;">0.48</td>
+<td style="text-align: center;">0.59</td>
+<td style="text-align: left;">Template 6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="performance-gap-analysis">Performance Gap Analysis<a class="headerlink" href="#performance-gap-analysis" title="Permanent link">&para;</a></h3>
+<p><strong>Specialized vs Generic:</strong>
+- Accuracy gap: 31.88% (96.11% vs 64.23%)
+- BLIP-VQA trained specifically for VQA
+- Generic pipeline uses frozen models
+- No fine-tuning or task adaptation</p>
+<p><strong>Why the Gap?</strong></p>
+<ol>
+<li><strong>BLIP-VQA Advantages:</strong></li>
+<li>End-to-end training on VQA datasets</li>
+<li>Direct visual-textual alignment</li>
+<li>Task-specific architecture</li>
+<li>
+<p>Millions of training examples</p>
+</li>
+<li>
+<p><strong>Generic Pipeline Limitations:</strong></p>
+</li>
+<li>Indirect visual understanding (via captions/detections)</li>
+<li>Information loss in vision → text conversion</li>
+<li>Prompt engineering limitations</li>
+<li>
+<p>No gradient-based adaptation</p>
+</li>
+<li>
+<p><strong>Still Impressive:</strong></p>
+</li>
+<li>64% accuracy without fine-tuning</li>
+<li>Demonstrates LLM reasoning capabilities</li>
+<li>Viable for low-resource scenarios</li>
+<li>Fast deployment (no training required)</li>
+</ol>
+<hr />
+<h2 id="6-error-analysis">6. Error Analysis<a class="headerlink" href="#6-error-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="common-failure-modes">Common Failure Modes<a class="headerlink" href="#common-failure-modes" title="Permanent link">&para;</a></h3>
+<p><strong>1. Numerical Understanding</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Question: &quot;How many people?&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>YOLO: person, person, person
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Generated: &quot;multiple&quot; ❌
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Correct: &quot;three&quot; ✓
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>Issue: Model provides semantic description vs exact count
+</code></pre></div></p>
+<p><strong>2. Ambiguous Questions</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Question: &quot;What color is the shirt?&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>BLIP: &quot;person wearing clothing&quot;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>YOLO: person, shirt
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Generated: &quot;blue&quot; ❌
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Correct: &quot;red&quot; ✓
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>Issue: Caption lacks color information, detections don&#39;t include attributes
+</code></pre></div></p>
+<p><strong>3. Complex Reasoning</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Question: &quot;Is the umbrella upside down?&quot;
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>BLIP: &quot;person with umbrella in rain&quot;
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>YOLO: person, umbrella
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Generated: &quot;no&quot; ❌
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Correct: &quot;yes&quot; ✓
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Issue: Spatial relationships not captured in detections
+</code></pre></div></p>
+<p><strong>4. Synonym Mismatches</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Question: &quot;What animal?&quot;
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Generated: &quot;canine&quot; (semantically correct)
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Ground Truth: &quot;dog&quot;
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Exact Match: ❌
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Semantic Match: ✓
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Issue: Highlights importance of semantic evaluation
+</code></pre></div></p>
+<h3 id="error-distribution-by-question-type">Error Distribution by Question Type<a class="headerlink" href="#error-distribution-by-question-type" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Question Type</th>
+<th style="text-align: center;">Accuracy</th>
+<th style="text-align: left;">Common Errors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Counting</td>
+<td style="text-align: center;">0.72</td>
+<td style="text-align: left;">Off-by-one errors, "several" vs exact</td>
+</tr>
+<tr>
+<td style="text-align: left;">Object ID</td>
+<td style="text-align: center;">0.68</td>
+<td style="text-align: left;">Synonym issues, ambiguous objects</td>
+</tr>
+<tr>
+<td style="text-align: left;">Color</td>
+<td style="text-align: center;">0.45</td>
+<td style="text-align: left;">Missing in captions, misidentification</td>
+</tr>
+<tr>
+<td style="text-align: left;">Yes/No</td>
+<td style="text-align: center;">0.71</td>
+<td style="text-align: left;">Spatial reasoning, negation handling</td>
+</tr>
+<tr>
+<td style="text-align: left;">Position</td>
+<td style="text-align: center;">0.52</td>
+<td style="text-align: left;">Relative positions unclear in detections</td>
+</tr>
+<tr>
+<td style="text-align: left;">Action</td>
+<td style="text-align: center;">0.61</td>
+<td style="text-align: left;">Abstract actions in captions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="model-specific-error-patterns">Model-Specific Error Patterns<a class="headerlink" href="#model-specific-error-patterns" title="Permanent link">&para;</a></h3>
+<p><strong>Llama-2:</strong>
+- Better at counting (YOLO data utilization)
+- Struggles with question-first formats
+- Sometimes generates explanations despite constraints</p>
+<p><strong>Mistral:</strong>
+- Better at direct questions
+- Struggles with structured detections (YOLO-only)
+- More consistent across templates</p>
+<hr />
+<h2 id="7-key-findings-summary">7. Key Findings Summary<a class="headerlink" href="#7-key-findings-summary" title="Permanent link">&para;</a></h2>
+<h3 id="major-discoveries">Major Discoveries<a class="headerlink" href="#major-discoveries" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Generation Configuration Critical</strong></li>
+<li>242% improvement with proper config</li>
+<li>max_new_tokens=3 + single-word prompt essential</li>
+<li>
+<p>Default generation completely fails</p>
+</li>
+<li>
+<p><strong>Combined Vision Models Win</strong></p>
+</li>
+<li>BLIP + YOLO outperforms individual models</li>
+<li>Complementary information crucial</li>
+<li>
+<p>8.4% improvement over best single model</p>
+</li>
+<li>
+<p><strong>Model-Specific Templates</strong></p>
+</li>
+<li>Llama: Context-first (Template 1, 58%)</li>
+<li>Mistral: Question-first (Template 7, 55.1%)</li>
+<li>
+<p>86% accuracy gap on same template</p>
+</li>
+<li>
+<p><strong>ICL Degrades Performance</strong></p>
+</li>
+<li>60% accuracy drop with random 5-shot</li>
+<li>1-shot competitive with zero-shot</li>
+<li>
+<p>Need semantic example selection</p>
+</li>
+<li>
+<p><strong>Llama Outperforms Mistral</strong></p>
+</li>
+<li>8.4% higher on best configuration</li>
+<li>More robust to pipeline variations</li>
+<li>
+<p>Better YOLO utilization</p>
+</li>
+<li>
+<p><strong>Quantization is Free</strong></p>
+</li>
+<li>&lt;1% accuracy difference</li>
+<li>BFloat16 safe for production</li>
+<li>
+<p>2x memory savings</p>
+</li>
+<li>
+<p><strong>Specialized Models Dominate</strong></p>
+</li>
+<li>BLIP-VQA: 96.11% accuracy</li>
+<li>Generic pipeline: 64.23% accuracy</li>
+<li>32% gap, but generic still viable</li>
+</ol>
+<h3 id="practical-recommendations">Practical Recommendations<a class="headerlink" href="#practical-recommendations" title="Permanent link">&para;</a></h3>
+<p><strong>Production Deployment:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Recommended configuration</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;meta-llama/Llama-2-7b-chat-hf&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">pipeline_type</span> <span class="o">=</span> <span class="s2">&quot;BLIP + YOLO&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="n">template</span> <span class="o">=</span> <span class="n">templates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Template 1</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="s2">&quot;torch_dtype&quot;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span>  <span class="c1"># Quantized</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="n">icl_examples</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Zero-shot</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1"># Expected performance: 64.23% semantic accuracy</span>
+</code></pre></div></p>
+<p><strong>For Mistral:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;mistralai/Mistral-7B-Instruct-v0.2&quot;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">template</span> <span class="o">=</span> <span class="n">templates</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># Template 7</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="s2">&quot;max_new_tokens&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="s2">&quot;torch_dtype&quot;</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">bfloat16</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="p">}</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Expected performance: 55.1% semantic accuracy</span>
+</code></pre></div></p>
+<p><strong>When to Use Generic Pipeline:</strong>
+- No training data available
+- Fast deployment required
+- Multiple vision tasks (not just VQA)
+- Computational constraints (no fine-tuning)
+- Experimentation and prototyping</p>
+<p><strong>When to Use BLIP-VQA:</strong>
+- Production VQA system
+- Accuracy critical (&gt;90% required)
+- Large-scale deployment
+- Single-task optimization</p>
+<hr />
+<h2 id="8-future-work">8. Future Work<a class="headerlink" href="#8-future-work" title="Permanent link">&para;</a></h2>
+<h3 id="immediate-improvements">Immediate Improvements<a class="headerlink" href="#immediate-improvements" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Semantic ICL Selection</strong></li>
+<li>Use sentence transformers for example selection</li>
+<li>Expected 10-15% improvement</li>
+<li>
+<p>Implementation: 2-3 days</p>
+</li>
+<li>
+<p><strong>Ensemble Methods</strong></p>
+</li>
+<li>Combine Llama + Mistral predictions</li>
+<li>Vote on ambiguous cases</li>
+<li>
+<p>Expected 3-5% improvement</p>
+</li>
+<li>
+<p><strong>Template Optimization</strong></p>
+</li>
+<li>Automated template search</li>
+<li>Per-question-type templates</li>
+<li>Expected 5-8% improvement</li>
+</ol>
+<h3 id="medium-term-research">Medium-Term Research<a class="headerlink" href="#medium-term-research" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Visual Feature Integration</strong></li>
+<li>Direct image embeddings (CLIP)</li>
+<li>Reduce information loss</li>
+<li>
+<p>Requires architecture changes</p>
+</li>
+<li>
+<p><strong>Instruction Tuning</strong></p>
+</li>
+<li>Fine-tune on VQA instruction dataset</li>
+<li>Maintain generalization</li>
+<li>
+<p>Bridge gap to specialized models</p>
+</li>
+<li>
+<p><strong>Retrieval-Augmented Generation</strong></p>
+</li>
+<li>Visual database lookup</li>
+<li>External knowledge integration</li>
+<li>Handle out-of-distribution questions</li>
+</ol>
+<h3 id="long-term-vision">Long-Term Vision<a class="headerlink" href="#long-term-vision" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>End-to-End Training</strong></li>
+<li>Joint vision-language training</li>
+<li>Task-specific adaptation</li>
+<li>
+<p>Approach BLIP-VQA performance</p>
+</li>
+<li>
+<p><strong>Multi-Modal Fusion</strong></p>
+</li>
+<li>Deeper integration of vision and language</li>
+<li>Attention-based fusion</li>
+<li>Unified representation learning</li>
+</ol>
+<hr />
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>This comprehensive analysis demonstrates that generic vision-language pipelines can achieve <strong>64.23% accuracy</strong> on Visual Question Answering without fine-tuning, reaching 67% of specialized model performance (BLIP-VQA: 96.11%). Key success factors include:</p>
+<ol>
+<li>Proper generation configuration (max_new_tokens=3 + explicit instructions)</li>
+<li>Combined vision models (BLIP + YOLO)</li>
+<li>Model-specific prompt templates</li>
+<li>Zero-shot inference (ICL hurts performance)</li>
+<li>Llama-2 over Mistral (8.4% advantage)</li>
+</ol>
+<p>While the performance gap with specialized models remains significant, the generic approach offers valuable advantages in deployment speed, flexibility, and computational efficiency for scenarios where fine-tuning is impractical.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024-2026
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/PraphulSamavedam" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
